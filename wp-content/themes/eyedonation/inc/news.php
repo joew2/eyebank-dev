@@ -16,7 +16,14 @@ add_action('init',function(){
  wp_register_script('ed-first-paragraph-editor',get_theme_file_uri('/assets/js/news-editor.js'),['wp-blocks','wp-element','wp-server-side-render'],filemtime(get_theme_file_path('/assets/js/news-editor.js')),true);
  register_block_type('eyedonation/first-paragraph',['api_version'=>3,'title'=>'Post first paragraph','category'=>'theme','uses_context'=>['postId','postType'],'editor_script'=>'ed-first-paragraph-editor','render_callback'=>function($attrs,$content,$block){
   $post=get_post($block->context['postId']??0);if(!$post||$post->post_status!=='publish'||$post->post_password)return '';
-  return '<div class="ed-news-intro"><p>'.esc_html(ed_first_paragraph($post->post_content)).'</p></div>';
+  $excerpt = trim(wp_strip_all_tags($post->post_excerpt));
+  $source = $excerpt !== '' ? $excerpt : ed_first_paragraph($post->post_content);
+  $text = html_entity_decode($source, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+  $words = preg_split('/\s+/u', trim($text), -1, PREG_SPLIT_NO_EMPTY);
+  $preview = implode(' ', array_slice($words ?: [], 0, 24));
+  if (count($words ?: []) > 24) $preview = rtrim($preview, '.,;:!?') . '…';
+  $link = '<a class="ed-news-read-more" href="'.esc_url(get_permalink($post)).'" aria-label="'.esc_attr(sprintf(__('Read more about %s', 'eyedonation'), get_the_title($post))).'">'.esc_html__('Read more', 'eyedonation').'</a>';
+  return '<div class="ed-news-intro"><p>'.esc_html($preview).' '.$link.'</p></div>';
  }]);
 });
 add_filter('render_block_core/post-featured-image',function($html,$block){

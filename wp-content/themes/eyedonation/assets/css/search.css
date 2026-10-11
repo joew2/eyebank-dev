@@ -5,3 +5,6 @@
 .ed-nav>.ed-search-open{margin-inline-start:-14.8px!important}
 /* Increase the current magnifier by 30%, preserving the visible menu gap. */
 .ed-search-open svg{width:18.72px;height:18.72px}.ed-nav>.ed-search-open{margin-inline-start:-12.64px!important}
+
+/* Match the menu highlight on the search control. */
+.ed-search-open{border-radius:0;transition:background-color .2s ease}.ed-search-open:hover,.ed-search-open:focus-visible{background:#043b90}
