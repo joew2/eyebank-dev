@@ -7,6 +7,7 @@ Custom WordPress work for The Eye-Bank of New York.
 - `wp-content/themes/eyedonation`: standalone block theme, editable layouts and patterns.
 - `wp-content/plugins/eyedonation-search`: permanent enhanced search plugin.
 - `wp-content/plugins/eyedonation-migrations`: explicit, versioned deployment migrations.
+- Other locally authored site plugins listed below, including both single-file and directory plugins.
 - `Spec`: supplied design specification, mockups, branding and original homepage photographs.
 - `deliverables`: deployment/editing guides, migration inventory, compatibility and test documentation, and isolated rehearsal tooling.
 
@@ -27,10 +28,26 @@ Requires WordPress 6.6+ and PHP 8.1+; recorded local testing uses WordPress 7.1.
 ```sh
 git status
 git diff
-git add wp-content/themes/eyedonation wp-content/plugins/eyedonation-search wp-content/plugins/eyedonation-migrations Spec deliverables README.md .gitignore .gitattributes
+git add wp-content/themes/eyedonation wp-content/plugins Spec deliverables README.md .gitignore .gitattributes
 git diff --cached --stat
 git commit -m "Describe the change"
 git push origin main
 ```
 
 Review staged changes before committing. Store database/upload backups privately outside this repository. Generated installable ZIPs are local build artifacts and can be recreated from the package directories.
+
+## Other custom plugins
+
+The following local plugins are backed up as source, with their existing names and behavior preserved:
+
+- `custom-user-info-url.php`
+- `custom-disable-layout-metaboxes`
+- `custom-disable-menu-links-for-creators`
+- `custom-donor-family-survey`
+- `custom-es-donor-family-survey`
+- `custom-family-survey-colums`
+- `custom-social-icons.php`
+- `custom-top-links-english-site`
+- `custom-translation-navigation-links`
+
+`custom-post-type-permalinks` is excluded: its local metadata identifies Toro_Unit’s third-party Custom Post Type Permalinks plugin, not locally authored code. Other installed plugins inspected identify third-party authors; no additional custom plugins were identified. Adding a new custom plugin requires an explicit allowlist entry in `.gitignore`.

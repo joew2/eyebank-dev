@@ -44,3 +44,14 @@ wp-config*.php
 *.tar
 *.tar.gz
 *.tgz
+
+# Locally authored site plugins (explicitly reviewed).
+!/wp-content/plugins/custom-user-info-url.php
+!/wp-content/plugins/custom-disable-layout-metaboxes/
+!/wp-content/plugins/custom-disable-menu-links-for-creators/
+!/wp-content/plugins/custom-donor-family-survey/
+!/wp-content/plugins/custom-es-donor-family-survey/
+!/wp-content/plugins/custom-family-survey-colums/
+!/wp-content/plugins/custom-social-icons.php
+!/wp-content/plugins/custom-top-links-english-site/
+!/wp-content/plugins/custom-translation-navigation-links/
