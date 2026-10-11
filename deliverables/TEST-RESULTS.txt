@@ -1,0 +1,5 @@
+PASS: 44 assertions on WordPress 7.1.3 / PHP 8.4.17. Isolated synthetic destination with different IDs. Not a fresh live-backup rehearsal.
+
+Applied local site: seven migrations completed; legacy builder content preserved. Desktop/mobile Chrome checks passed; enhanced search returned six first-page records; placeholder destination rendered; no page errors; no mobile overflow. 27 PHP files passed syntax validation.
+
+Migration 010: 13 integration assertions passed. Editable homepage installed locally; preview guards, before-images, preserved menu/Thrive data and completed retry verified.

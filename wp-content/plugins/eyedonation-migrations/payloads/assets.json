@@ -1,0 +1,47 @@
+{
+  "homepage_hero": {
+    "path": "2026/10/main_hero_photo.jpg",
+    "sha256": "9e77ee3d7e086dd20db244724f000112eebebdb6234a1c93a052b22aedcc7704",
+    "alt": "Parents smiling with their young child"
+  },
+  "donate_life_logo": {
+    "path": "2026/10/donate_life_logo.png",
+    "sha256": "7108956a711b53c617a6d5562583bc590ecb3f9bfc9e8e6a6a4247b331de2c0e",
+    "alt": "Donate Life"
+  },
+  "resources_recipients_families": {
+    "path": "2026/10/transplant_recipients_donor_families.jpg",
+    "sha256": "57fa07524d0d74c8dcbf8b81ca3b37bf819bd07f72ff8490673be3ac8e026489",
+    "alt": "A family spending time together outdoors"
+  },
+  "resources_research_portal": {
+    "path": "2026/10/research_portal_photo.jpg",
+    "sha256": "7addc21157eec02e92ccee8bfb8ad54f0c654c19ee226a9cc7bb4ae76ee176c6",
+    "alt": "A researcher working with a microscope"
+  },
+  "resources_transplant_portal": {
+    "path": "2026/10/transplant_portal.jpg",
+    "sha256": "c85c6073b8e503dd87040e53d8b8e6752d9a37aaba56831e5bfa65fdf21bc370",
+    "alt": "A gloved hand holding a donated cornea container"
+  },
+  "history_desktop": {
+    "path": "2026/10/worlds_first_eye_bank_photo_desktop.jpg",
+    "sha256": "ecdc0b3c7f557e1d042e1094716ef886378e563bcbf58de8dd2699b9c7c7fb02",
+    "alt": "Eye-Bank staff working in the original laboratory"
+  },
+  "history_mobile": {
+    "path": "2026/10/worlds_first_eye_bank_photo_mobile.jpg",
+    "sha256": "a1707198bd6b726c1ff09addf6943fbb8a2e75cd5bde23fbfa5ee9eab5a0c46e",
+    "alt": "Eye-Bank staff working in the original laboratory"
+  },
+  "eye_can_see_again": {
+    "path": "2026/10/eye-can-see-again.jpg",
+    "sha256": "b865c9b712ea6b8069cea466061dc981c8006604463087bbcf85dc847fade383",
+    "alt": "Adam, a transplant recipient: My sight was restored because someone I never knew made the decision to give the gift of sight."
+  },
+  "support_photo": {
+    "path": "2026/10/support_our_sight-saving_programs_photo.jpg",
+    "sha256": "4160fb72b3ad86065d482825872e971de16080815a2593fd4d323a0b0f46c87c",
+    "alt": "A mother reading with her children at home"
+  }
+}

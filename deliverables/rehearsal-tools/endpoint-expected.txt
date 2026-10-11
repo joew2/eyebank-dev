@@ -1,0 +1,4 @@
+guest -> {"success":false,"data":{"message":"Unauthorized"}}
+missing -> -1
+invalid -> -1
+unknown (valid nonce) -> {"success":false,"data":{"message":"Unregistered migration ID."}}

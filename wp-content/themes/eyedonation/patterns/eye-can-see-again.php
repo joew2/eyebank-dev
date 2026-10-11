@@ -1,0 +1,9 @@
+<?php
+/**
+ * Title: EyeDonation Eye Can See Again
+ * Slug: eyedonation/eye-can-see-again
+ * Categories: featured
+ * Description: Editable section; select supplied media and approved destinations before publishing.
+ */
+?>
+<!-- wp:group {"tagName":"div","className":"ed-section","layout":{"type":"constrained"}} --><div class="wp-block-group ed-section"><!-- wp:columns --><div class="wp-block-columns"><!-- wp:column --><div class="wp-block-column"><!-- wp:heading {"level":2} --><h2 class="wp-block-heading">Eye Can See Again</h2><!-- /wp:heading --><!-- wp:paragraph --><p>The Eye-Bank recently launched a new website to celebrate the gift of sight.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>EyeCanSeeAgain.org features a library of transplant recipient testimonial videos and a portrait gallery of New Yorkers whose sight was restored with donor tissue provided by The Eye-Bank.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>If you are a cornea transplant recipient, we would like to hear your story!</p><!-- /wp:paragraph --><!-- wp:buttons --><div class="wp-block-buttons"><!-- wp:button {"className":"is-style-outline"} --><div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="">EyeCanSeeAgain.org</a></div><!-- /wp:button --></div><!-- /wp:buttons --></div><!-- /wp:column --><!-- wp:column --><div class="wp-block-column"><!-- wp:image {"sizeSlug":"full","className":""} --><figure class="wp-block-image size-full "><img src="<?php echo esc_url(get_theme_file_uri('/assets/images/placeholder.svg')); ?>" alt="Development placeholder: eye_can_see_again"/></figure><!-- /wp:image --><!-- wp:buttons --><div class="wp-block-buttons"><!-- wp:button {"className":""} --><div class="wp-block-button "><a class="wp-block-button__link wp-element-button" href="">Watch Adam’s Video ▸</a></div><!-- /wp:button --></div><!-- /wp:buttons --></div><!-- /wp:column --></div><!-- /wp:columns --></div><!-- /wp:group -->

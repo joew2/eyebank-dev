@@ -1,0 +1,7 @@
+<?php
+defined('ABSPATH') || exit;
+/** Native editable donor panel with a single full-card destination. */
+function ed_update_donor_panel($content,$strict=false){
+ $blocks=parse_blocks($content);$count=0;$walk=function(&$blocks)use(&$walk,&$count){foreach($blocks as &$block){if(($block['blockName']??'')==='core/group'&&in_array('ed-callout',explode(' ',$block['attrs']['className']??''),true)){$count++;$image=null;foreach($block['innerBlocks'] as $child)if(($child['blockName']??'')==='core/image'){$image=$child;break;}if(!$image)throw new RuntimeException('Donor panel logo is missing.');$html='<!-- wp:group {"className":"ed-callout ed-donor-panel","layout":{"type":"default"}} --><div class="wp-block-group ed-callout ed-donor-panel">'.serialize_block($image).'<!-- wp:paragraph --><p>Sign up today<br>to be a donor</p><!-- /wp:paragraph --><!-- wp:html --><a class="ed-donor-panel-link" href="https://donatelife.ny.gov/ref/EBSRlink/" aria-label="Sign up today to be a donor"><svg viewBox="0 0 16 24" width="16" height="24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M0 0L16 12L0 24Z"></path></svg></a><!-- /wp:html --></div><!-- /wp:group -->';$block=parse_blocks($html)[0];}elseif(!empty($block['innerBlocks']))$walk($block['innerBlocks']);}};$walk($blocks);if($strict&&$count!==1)throw new RuntimeException('Expected exactly one donor signup panel.');return serialize_blocks($blocks);
+}
+function ed_latest_homepage_pattern_content(){return ed_update_donor_panel(ed_current_homepage_pattern_content());}

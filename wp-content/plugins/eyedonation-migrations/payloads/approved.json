@@ -1,0 +1,110 @@
+{
+    "approved": true,
+    "primary_navigation": [
+        {
+            "label": "About The Eye-Bank",
+            "placeholder": "about"
+        },
+        {
+            "label": "Become a Donor",
+            "placeholder": "donor"
+        },
+        {
+            "label": "Volunteer",
+            "placeholder": "volunteer"
+        },
+        {
+            "label": "Give Now",
+            "placeholder": "donation"
+        },
+        {
+            "label": "More",
+            "placeholder": "more"
+        }
+    ],
+    "footer_navigation": [
+        {
+            "label": "About Us",
+            "placeholder": "about"
+        },
+        {
+            "label": "Careers",
+            "placeholder": "careers"
+        },
+        {
+            "label": "Researchers",
+            "placeholder": "research"
+        },
+        {
+            "label": "Surgeons",
+            "placeholder": "transplant"
+        },
+        {
+            "label": "Transplant Recipients & Donor Families",
+            "placeholder": "recipients"
+        },
+        {
+            "label": "Terms and Conditions",
+            "placeholder": "terms"
+        },
+        {
+            "label": "Privacy Policy",
+            "placeholder": "privacy"
+        }
+    ],
+    "homepage": {
+        "path": "eye-bank-home",
+        "expected_content_sha256": "cc3ab7578dd21b75c560a419ee4ccfbd47816d9164d613c4bfc3e05ac2f20976",
+        "approve_replacement": true
+    },
+    "links": {
+        "donor": {
+            "placeholder": "donor"
+        },
+        "recipients": {
+            "placeholder": "recipients"
+        },
+        "research": {
+            "placeholder": "research"
+        },
+        "transplant": {
+            "placeholder": "transplant"
+        },
+        "about": {
+            "placeholder": "about"
+        },
+        "utility": {
+            "placeholder": "utility"
+        },
+        "video": {
+            "placeholder": "video"
+        },
+        "donation": {
+            "placeholder": "donation"
+        }
+    },
+    "asset_mappings": [],
+    "approved_asset_differences": [],
+    "page_settings": {
+        "show_on_front": {
+            "expected": "page",
+            "value": "page"
+        },
+        "page_on_front": {
+            "expected": "386743",
+            "value": "eye-bank-home"
+        }
+    },
+    "search_settings": {
+        "enhanced": true,
+        "filters": true,
+        "highlight": true,
+        "per_page": 6,
+        "excluded_types": [],
+        "excluded_ids": [],
+        "groups": []
+    },
+    "expected_search_settings_sha256": "d405642550e33306dd3a1bf9d08f4095968c621bde478fc071ca8b0fbd366d4b",
+    "notes": "Owner authorized applying the local design with placeholder links. Existing homepage replacement and nine supplied photos approved for this local preview. All placeholder destinations remain to be replaced before launch; production deployment is not authorized.",
+    "adoptions": []
+}

@@ -1,0 +1,2 @@
+<?php
+define('DOING_AJAX',true);require __DIR__.'/bootstrap.php';$mode=$argv[1]??'guest';if($mode!=='guest')wp_set_current_user(get_users(['role'=>'administrator','number'=>1])[0]->ID);$_SERVER['REQUEST_METHOD']='POST';$_POST=['backup'=>'1','migration'=>'unregistered'];$_REQUEST=$_POST;if($mode==='invalid')$_REQUEST['_ajax_nonce']='invalid';elseif($mode==='unknown')$_REQUEST['_ajax_nonce']=wp_create_nonce('edm_run');do_action('wp_ajax_edm_batch');

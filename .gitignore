@@ -1,0 +1,46 @@
+# Allowlist project sources: do not track the installed WordPress environment.
+/*
+!/.gitignore
+!/.gitattributes
+!/README.md
+!/Spec/
+!/deliverables/
+!/wp-content/
+/wp-content/*
+!/wp-content/themes/
+/wp-content/themes/*
+!/wp-content/themes/eyedonation/
+!/wp-content/plugins/
+/wp-content/plugins/*
+!/wp-content/plugins/eyedonation-search/
+!/wp-content/plugins/eyedonation-migrations/
+
+# Reproducible output and environment-specific records.
+/deliverables/*.png
+/deliverables/LOCAL-*
+/deliverables/PACKAGE-CHECKSUMS.json
+*.zip
+.DS_Store
+._*
+Thumbs.db
+node_modules/
+vendor/
+.cache/
+coverage/
+
+# Credentials, machine configuration, logs and database/server backups.
+.env
+.env.*
+wp-config*.php
+*.sql
+*.sql.*
+*.log
+*.pem
+*.key
+*.p12
+*.pfx
+*.bak
+*.backup
+*.tar
+*.tar.gz
+*.tgz

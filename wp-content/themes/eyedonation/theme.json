@@ -1,0 +1,137 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "settings": {
+    "appearanceTools": true,
+    "layout": {
+      "contentSize": "1120px",
+      "wideSize": "1280px"
+    },
+    "color": {
+      "palette": [
+        {
+          "slug": "blue",
+          "name": "Eye-Bank blue",
+          "color": "#0345ab"
+        },
+        {
+          "slug": "cyan",
+          "name": "Cyan",
+          "color": "#00b7d5"
+        },
+        {
+          "slug": "teal",
+          "name": "Teal",
+          "color": "#009e9f"
+        },
+        {
+          "slug": "white",
+          "name": "White",
+          "color": "#ffffff"
+        },
+        {
+          "slug": "ink",
+          "name": "Ink",
+          "color": "#202020"
+        }
+      ]
+    },
+    "typography": {
+      "fontFamilies": [
+        {
+          "slug": "arial",
+          "name": "Arial",
+          "fontFamily": "Arial, Helvetica, sans-serif"
+        }
+      ],
+      "fontSizes": [
+        {
+          "slug": "small",
+          "name": "Small",
+          "size": "0.9rem"
+        },
+        {
+          "slug": "medium",
+          "name": "Body",
+          "size": "1.125rem"
+        },
+        {
+          "slug": "large",
+          "name": "Heading",
+          "size": "clamp(1.75rem,3vw,2.8rem)"
+        }
+      ]
+    }
+  },
+  "styles": {
+    "typography": {
+      "fontFamily": "var:preset|font-family|arial",
+      "lineHeight": "1.45"
+    },
+    "color": {
+      "text": "var:preset|color|ink",
+      "background": "var:preset|color|white"
+    },
+    "elements": {
+      "heading": {
+        "typography": {
+          "fontWeight": "700"
+        },
+        "color": {
+          "text": "var:preset|color|blue"
+        }
+      },
+      "button": {
+        "color": {
+          "background": "var:preset|color|blue",
+          "text": "var:preset|color|white"
+        },
+        "border": {
+          "radius": "2rem"
+        }
+      }
+    }
+  },
+  "customTemplates": [
+    {
+      "name": "page-wide",
+      "title": "Wide Page",
+      "postTypes": [
+        "page"
+      ]
+    },
+    {
+      "name": "page-landing",
+      "title": "Landing Page",
+      "postTypes": [
+        "page"
+      ]
+    },
+    {
+      "name": "homepage",
+      "title": "EyeDonation Homepage",
+      "postTypes": [
+        "page"
+      ]
+    },
+    {
+      "name": "homepage-layout",
+      "title": "EyeDonation Saved Homepage Layout",
+      "postTypes": [
+        "page"
+      ]
+    }
+  ],
+  "templateParts": [
+    {
+      "name": "header",
+      "title": "Header",
+      "area": "header"
+    },
+    {
+      "name": "footer",
+      "title": "Footer",
+      "area": "footer"
+    }
+  ]
+}

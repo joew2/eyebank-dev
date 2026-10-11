@@ -1,0 +1,1 @@
+wp.blocks.registerBlockType('eyedonation/first-paragraph',{apiVersion:3,title:'Post first paragraph',category:'theme',usesContext:['postId','postType'],edit:({context})=>wp.element.createElement(wp.serverSideRender,{block:'eyedonation/first-paragraph',urlQueryArgs:{post_id:context.postId}}),save:()=>null});
