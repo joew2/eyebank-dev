@@ -1,6 +1,6 @@
 <?php
 defined('ABSPATH') || exit;
-add_action('after_setup_theme', function(){ add_theme_support('editor-styles'); add_editor_style('assets/css/base.css'); add_theme_support('post-thumbnails'); });
+add_action('after_setup_theme', function(){ add_theme_support('editor-styles'); add_editor_style(['assets/css/base.css','assets/css/about.css']); add_theme_support('post-thumbnails'); });
 
 // Portable supplied branding fallback; selecting a Site Logo in the editor takes precedence.
 add_filter('render_block_core/site-logo',function($html,$block){

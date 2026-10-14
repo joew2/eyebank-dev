@@ -120,6 +120,20 @@
       "postTypes": [
         "page"
       ]
+    },
+    {
+      "name": "about",
+      "title": "EyeDonation About Us",
+      "postTypes": [
+        "page"
+      ]
+    },
+    {
+      "name": "about-layout",
+      "title": "EyeDonation Saved About Us Layout",
+      "postTypes": [
+        "page"
+      ]
     }
   ],
   "templateParts": [

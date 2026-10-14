@@ -27,3 +27,7 @@ Restored hamburger navigation at widths up to 1024px and matched the supplied wh
 Added Custom Accessibility Translation CWS (ATP) 1.2.0: independent accessibility controls, copied legacy page mappings, unified administration, footer/screen placement, compact widget sizing, readable language choices, and optional bottom-right placement on tablets/phones. Included its integration/browser checks and documentation.
 
 Included the final centered mobile footer with two dividers, 15px contact/navigation text, 13px caption/copyright text, automatic copyright year in the site timezone, and 50px desktop navigation bar. Backed up supplied mobile header/footer mockups and the new About Us design assets.
+
+## October 13, 2026 — Editable About Us
+
+Replaced `/about-the-eye-bank/` with the supplied Who We Are, Mission, Vision, Values, History, and Leadership layout. Added responsive hero photographs, circular mission images, inline SVG value icons, full-card links, a reusable pattern, and two About Us templates. Added migration 016 for explicit installation on existing/new sites, with before-images and completed-run protection.
