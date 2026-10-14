@@ -55,3 +55,6 @@ wp-config*.php
 !/wp-content/plugins/custom-social-icons.php
 !/wp-content/plugins/custom-top-links-english-site/
 !/wp-content/plugins/custom-translation-navigation-links/
+
+# Combined locally authored accessibility and translation widget.
+!/wp-content/plugins/custom-accessibility-translation/

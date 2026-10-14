@@ -13,3 +13,17 @@
 Validation: PHP syntax checks and local Chrome checks for menu spacing, image/link hover effects, responsive testimonial layout, exact SVG paths and social destinations, button press feedback, and news layout. Installable theme package rebuilt locally.
 
 Backup scope: theme, custom plugins, design sources, and documentation. Existing exclusions continue to keep WordPress core, third-party themes/plugins, uploads, database exports, credentials, and generated ZIPs out of Git. WordPress database edits remain in the local environment and require a separate database backup.
+
+## October 12, 2026 — Approved footer
+
+Replaced contact placeholders with The Eye-Bank for Sight Restoration, 120 Wall Street, New York, NY 10005, and (212) 742-9000. Installed the eight supplied navigation destinations, EBAA nonprofit caption, and 2026 copyright/administrator wording. Refined responsive footer columns and spacing. Added an explicit saved-footer migration with before-image and completed-run protection; earlier migrations remain unchanged.
+
+## October 12, 2026 — Tablet/mobile header
+
+Restored hamburger navigation at widths up to 1024px and matched the supplied white-header mockup: logo left, inline Donate Life signup and arrow, hamburger right. The header remains sticky, search is available in the menu overlay, and the floating donor panel is hidden on tablets/phones. Desktop navigation and donor panel return at wider widths. Shared rendering applies to existing saved headers and new theme defaults.
+
+## October 13, 2026 — Consolidated backup
+
+Added Custom Accessibility Translation CWS (ATP) 1.2.0: independent accessibility controls, copied legacy page mappings, unified administration, footer/screen placement, compact widget sizing, readable language choices, and optional bottom-right placement on tablets/phones. Included its integration/browser checks and documentation.
+
+Included the final centered mobile footer with two dividers, 15px contact/navigation text, 13px caption/copyright text, automatic copyright year in the site timezone, and 50px desktop navigation bar. Backed up supplied mobile header/footer mockups and the new About Us design assets.

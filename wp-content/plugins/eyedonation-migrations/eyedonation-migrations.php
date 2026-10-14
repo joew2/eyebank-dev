@@ -29,3 +29,4 @@ require DIR.'/migrations/012_install_updated_homepage.php';
 
 require DIR.'/migrations/013_update_donor_panel.php';
 require DIR.'/migrations/014_install_donor_homepage.php';
+require DIR.'/migrations/015_update_footer.php';

@@ -51,3 +51,7 @@ The following local plugins are backed up as source, with their existing names a
 - `custom-translation-navigation-links`
 
 `custom-post-type-permalinks` is excluded: its local metadata identifies Toro_Unit’s third-party Custom Post Type Permalinks plugin, not locally authored code. Other installed plugins inspected identify third-party authors; no additional custom plugins were identified. Adding a new custom plugin requires an explicit allowlist entry in `.gitignore`.
+
+## Combined accessibility and translation widget
+
+`wp-content/plugins/custom-accessibility-translation/` contains **Custom Accessibility Translation CWS (ATP)**. It replaces the two separate visitor widgets, copies legacy translation mappings on activation, and provides an independent settings/mapping screen. See its README for deployment and verification. Old plugin sources and records are preserved.
