@@ -8,4 +8,4 @@
  * Inserter: yes
  */
 defined('ABSPATH') || exit;
-echo ed_latest_homepage_pattern_content();
+echo ed_resolve_approved_links(ed_latest_homepage_pattern_content());

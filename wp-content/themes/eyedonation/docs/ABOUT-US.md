@@ -19,3 +19,7 @@ Keep completed migration 016 and its referenced payload/helper files unchanged. 
 ## Validation
 
 Text was extracted from both supplied PDFs using local PDFKit and compared with the mockups. WordPress's native JavaScript block parser reported no invalid blocks for the live page, pattern, content template, or backup template. Chrome checks passed at 1440/1024/390/320px, with no horizontal overflow, four/two value columns, responsive hero selections, exact supplied SVG paths, and full-card links. Existing-page replacement, fresh-page creation, preview-actor rejection, completed-retry preservation, and historical migration checksum preservation were verified. Temporary test pages were removed.
+
+## Updated hero photos
+
+The reusable pattern and backup layout now use `ed_latest_about_content()`, which applies the approved desktop/mobile photo replacements to the original content. The live page uses the supplied October 2026 upload URLs. Matching bundled copies provide a portable fallback if those uploads are absent on a new site. Migration 017 updates only the existing page’s two hero Image blocks; migration 018 is the latest complete About Us installer for a fresh deployment. Completed migration 016 remains unchanged. The desktop hero now targets 620–820px while expanding if the editable text requires room; the phone photo area uses 48vw.

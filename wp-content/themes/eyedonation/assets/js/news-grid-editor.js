@@ -1,0 +1,1 @@
+wp.blocks.registerBlockType('eyedonation/news-grid',{apiVersion:3,title:'Eye-Bank News grid',category:'theme',description:'Nine latest stories, with nine more per Load more click. Edit individual stories under Posts.',supports:{html:false},edit:()=>wp.element.createElement(wp.serverSideRender,{block:'eyedonation/news-grid'}),save:()=>null});

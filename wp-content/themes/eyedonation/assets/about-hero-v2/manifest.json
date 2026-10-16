@@ -1,0 +1,12 @@
+{
+  "desktop": {
+    "file": "about-hero-photo-desktop.jpg",
+    "upload_path": "2026/10/about-hero-photo-desktop.jpg",
+    "sha256": "2cbcd876999b8b51c7841dd3951fd28c220c301ba930d3474c6757f11aa61e21"
+  },
+  "mobile": {
+    "file": "about-hero-photo-mobile.jpg",
+    "upload_path": "2026/10/about-hero-photo-mobile.jpg",
+    "sha256": "edbd0e73d61c8fa362c795fd079a36bf92fdd91e4b57071048ca4adca57095f7"
+  }
+}

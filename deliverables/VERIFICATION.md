@@ -69,3 +69,51 @@ Tablet/mobile header — October 12, 2026: at widths up to 1024px the sticky hea
 Mobile footer mockup: up to 1024px, footer content forms a centered stack with social icons before the logo, centered contact information and eight navigation links, and thin white dividers above/below the navigation. The accreditation/copyright stay centered, with prior 15px/13px font sizes preserved. Browser checks at 390/768/1024/1440px confirmed order, borders, links, no overflow, and the retained desktop columns.
 
 About Us — October 13, 2026: replaced page ID 30 with the supplied desktop/mobile design and PDF copy as valid native blocks. Added an editable Post Content template, a complete reusable pattern, and a standalone saved-layout template. Inline SVG paths match the four supplied icons, with namespaced classes/clip IDs. Migration 016 supports both existing-page replacement and new-page creation, captures before-images, sets the native template before writing content, preserves builder data, and skips completed retries. Browser tests at 1440/1024/390/320px and native block-parser checks passed; fixture creation, preview-actor guard, retry preservation, and historical checksums were verified.
+
+Shared page styles — October 14, 2026: Home/About now share typography variables and a single linked-photo card component. Matching heading/body sizes, blue heading color, white 24px card labels, 16px padding, hover effects, and correct overlay stacking were checked at 1440/1275/768/390/320px without overflow. At 1275px, the About intro is 1200px wide and approximately 79px higher than its baseline; hero height is reduced exactly 70px. Both public and editor styles load the shared stylesheet. Page content and frozen migration files remain unchanged.
+
+About hero replacement — October 14, 2026: supplied desktop/mobile upload URLs are installed through scoped migration 017. Original migration 016 checksum/history is preserved. Updated fresh installer 018 preview resolves the new photographs, and the pattern/backup template use the latest helper. Browser checks at 1275/1440/768/390/320px verified both URLs, loaded images, 1200px desktop intro width, no overflow, and shorter framing (approximately 742px hero at 1275px versus the previous 976px). Bundled approved-photo copies support deployments without existing uploads.
+
+Pixel typography — October 14, 2026: converted all rem units in theme CSS/theme.json to pixels using a 16px base. The requested 1.35rem exception is now 18px and --ed-font-card is 20px. No rem units remain in theme code. Browser checks confirmed 18px body text, 20px photo-card labels, and no overflow on Home/About at 1440/390/320px.
+
+Contained search popup — October 14, 2026: responsive white panel with drop shadow, dimmed backdrop, opening/closing animations, updated description, and circular X centered on its upper-left corner. Native modal semantics, keyboard focus trapping, Escape, focus return, scroll locking/restoration, and reduced-motion behavior are preserved. Chrome checks passed at 1440/768/390/320px, including exact close-control alignment and description text.
+
+## October 14, 2026 — Recipients and donor families
+
+Verified the published page at 1440, 1024, 390, and 320px: two columns on larger screens, stacked cards on phones, loaded photos, and no horizontal overflow. Checked resource destinations and native WordPress block validity (zero invalid blocks). Migration 019 applied successfully; its completed-run retry skipped without rewriting content. PHP lint passed.
+
+## October 15, 2026 — Approved homepage links
+
+Replaced homepage and saved header placeholder destinations with the supplied resource, About, video, EyeCanSeeAgain.org, and donation URLs. Updated the default header and reusable homepage pattern; unresolved original placeholders in older layouts resolve to the approved URLs without overriding custom links. Verified rendered homepage destinations and both EyeCanSeeAgain.org buttons in Chrome.
+
+## October 15, 2026 — Our History verification
+
+PHP lint and native WordPress block validation passed (zero invalid blocks). Browser checks at 1440, 1024, 390, and 320px confirmed all ten images load, all 24 paragraphs render, and no horizontal overflow occurs. Visually reviewed desktop/mobile screenshots. Migration 020 replaced only page 53, preserved prior migration history, and safely skipped a completed retry. A private before-image of original content and custom fields was saved before replacement.
+
+## October 15, 2026 — Leadership verification
+
+PHP lint and native WordPress block validation passed (zero invalid blocks). Checked all seven supplied links and all eight paragraphs. Browser checks at 1440, 1024, 390, and 320px confirmed image loading and no horizontal overflow; visually reviewed desktop/mobile screenshots. Migration 021 updated only existing page 204, retained previous migration history, and skipped its completed retry. Saved a private original-content/metadata before-image.
+
+## October 15, 2026 — Employment verification
+
+PHP lint and native block validation passed (zero invalid blocks). After migration, browser checks at 1440, 1024, 390, and 320px confirmed desktop columns/mobile stacking, all five departments and ten list items, four paragraphs, both HR email links, loaded image, and no overflow. Reviewed desktop/mobile screenshots and corrected department-heading specificity. Migration 022 updated page 186, preserved prior migration history, and skipped a completed retry. Original page and metadata were saved privately before replacement.
+
+## October 15, 2026 — Volunteer verification
+
+PHP lint and native block validation passed, including the Shortcode block (zero invalid blocks). Confirmed Gravity Forms and form ID 1 exist. Browser checks at 1440, 1024, 390, and 320px confirmed both images, responsive columns, no overflow, and the rendered #gform_1 with 24 form controls and no literal shortcode. Visually reviewed desktop/mobile screenshots. No form was submitted. Migration 023 updated page 73, retained prior migration history, and skipped a completed retry; a private original page/metadata before-image was saved.
+
+## October 15, 2026 — History reflow verification
+
+Confirmed exact preservation of all 24 paragraph and ten image blocks, plus idempotent transformation. Migration 024 completed and its retry skipped; prior migration history was unchanged. Native WordPress validation reports zero invalid blocks. Browser checks at 1440, 1024, 390, and 320px confirmed all images load, no overflow, 18px body text, pilot above the plane, and continuous desktop text with 24px paragraph separation. Desktop/mobile screenshots were reviewed against the supplied original-page reference.
+
+## October 15, 2026 — Volunteer column refinement
+
+Verified exact preservation of all heading, paragraph, image, and Shortcode blocks. Migration 025 completed with prior history unchanged and skipped its completed retry. Native block validation passed with zero invalid blocks. At 1440/1024px the form renders in the right column, with the photo under the left-column text. At 390/320px the form follows the photo. All 24 form controls render; no horizontal overflow. No form submission was performed.
+
+## October 16, 2026 — About Donation verification
+
+Native block validation passed with zero invalid blocks. PHP lint passed for the dynamic grid and migration. Migration 026 updated page 383413 and skipped its completed retry with earlier migration history unchanged. Browser checks at 1440, 1024, 768, 390, and 320px confirmed responsive 3/2/1-column layouts, correct story titles, loaded thumbnail, teal inline links, no date blocks, newsletter placeholders, and no overflow. Real AJAX clicks loaded 9 → 18 → 27 unique stories. Error/retry, exhausted state, invalid-cursor rejection, reduced motion, and no-JavaScript next-batch pagination passed. Reviewed desktop/mobile screenshots. Original page/metadata are saved privately before replacement.
+
+## October 16, 2026 — AJAX title regression
+
+After two real Load More clicks, verified every card at counts 9, 18, and 27 has a nonempty title, matching title/Read more destinations, matching accessible summary label, blue color, and 20px font size. Confirmed unique post IDs and no mobile overflow. PHP lint passed.

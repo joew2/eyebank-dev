@@ -48,17 +48,17 @@
         {
           "slug": "small",
           "name": "Small",
-          "size": "0.9rem"
+          "size": "14.4px"
         },
         {
           "slug": "medium",
           "name": "Body",
-          "size": "1.125rem"
+          "size": "18px"
         },
         {
           "slug": "large",
           "name": "Heading",
-          "size": "clamp(1.75rem,3vw,2.8rem)"
+          "size": "clamp(28px,3vw,44.8px)"
         }
       ]
     }
@@ -87,7 +87,7 @@
           "text": "var:preset|color|white"
         },
         "border": {
-          "radius": "2rem"
+          "radius": "32px"
         }
       }
     }
@@ -131,6 +131,90 @@
     {
       "name": "about-layout",
       "title": "EyeDonation Saved About Us Layout",
+      "postTypes": [
+        "page"
+      ]
+    },
+    {
+      "name": "recipients-families",
+      "title": "EyeDonation Recipients and Families",
+      "postTypes": [
+        "page"
+      ]
+    },
+    {
+      "name": "recipients-families-layout",
+      "title": "EyeDonation Saved Recipients and Families Layout",
+      "postTypes": [
+        "page"
+      ]
+    },
+    {
+      "name": "our-history",
+      "title": "EyeDonation Our History",
+      "postTypes": [
+        "page"
+      ]
+    },
+    {
+      "name": "our-history-layout",
+      "title": "EyeDonation Saved Our History Layout",
+      "postTypes": [
+        "page"
+      ]
+    },
+    {
+      "name": "leadership",
+      "title": "EyeDonation Leadership",
+      "postTypes": [
+        "page"
+      ]
+    },
+    {
+      "name": "leadership-layout",
+      "title": "EyeDonation Saved Leadership Layout",
+      "postTypes": [
+        "page"
+      ]
+    },
+    {
+      "name": "employment",
+      "title": "EyeDonation Employment",
+      "postTypes": [
+        "page"
+      ]
+    },
+    {
+      "name": "employment-layout",
+      "title": "EyeDonation Saved Employment Layout",
+      "postTypes": [
+        "page"
+      ]
+    },
+    {
+      "name": "volunteer",
+      "title": "EyeDonation Volunteer",
+      "postTypes": [
+        "page"
+      ]
+    },
+    {
+      "name": "volunteer-layout",
+      "title": "EyeDonation Saved Volunteer Layout",
+      "postTypes": [
+        "page"
+      ]
+    },
+    {
+      "name": "about-donation",
+      "title": "EyeDonation About Donation",
+      "postTypes": [
+        "page"
+      ]
+    },
+    {
+      "name": "about-donation-layout",
+      "title": "EyeDonation Saved About Donation Layout",
       "postTypes": [
         "page"
       ]
