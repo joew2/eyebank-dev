@@ -91,3 +91,7 @@ Replaced /about-donation/ with an editable newsletter hero and a nine-story dyna
 ## October 16, 2026 — AJAX news titles
 
 Fixed missing titles in Load More responses: REST requests have no global page context, so the native title renderer could return empty HTML. The selected-post title handler now creates the correct linked heading when needed, preserving the same card classes and styling.
+
+## October 20, 2026 — Mobile navigation accordion
+
+Collapsed top-level submenus by default at widths up to 1024px. Tapping a parent label or its reused desktop chevron expands/collapses the submenu with the existing vertical-flip transition. Added accessible button state/control relationships, Enter/Space support, submenu Escape handling, and collapsed state on menu reopening. Desktop native navigation is preserved.

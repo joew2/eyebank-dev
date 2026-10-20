@@ -91,3 +91,17 @@
 
 /* EyeCanSeeAgain.org text: 15% larger than the prior 16px homepage size. */
 .ed-section .is-style-outline .wp-block-button__link{font-size:18.4px}
+/* Collapsed mobile submenus; desktop keeps its native hover/click controls. */
+.ed-mobile-submenu-toggle{display:none}
+@media(max-width:1024px){
+.ed-brand .ed-mobile-accordion .wp-block-navigation__container{width:100%;align-items:stretch}
+.ed-brand .ed-mobile-accordion .wp-block-navigation__container>.has-child{width:100%;align-items:stretch}
+.ed-brand .ed-mobile-accordion .wp-block-navigation__container>.has-child>.wp-block-navigation-item__content,.ed-brand .ed-mobile-accordion .wp-block-navigation__container>.has-child>button.wp-block-navigation__submenu-icon{display:none!important}
+.ed-brand .ed-mobile-accordion .ed-mobile-submenu-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;min-height:44px;padding:0 6px 0 0;gap:16px;border:0;border-radius:0;background:transparent;color:#0345ab;font:inherit;font-size:16px;line-height:1.4;text-align:left;cursor:pointer}
+.ed-brand .ed-mobile-accordion .ed-mobile-submenu-toggle>.wp-block-navigation__submenu-icon{display:block!important;flex:0 0 1.08em;margin:0;background:transparent}
+.ed-brand .ed-mobile-accordion .ed-mobile-submenu-toggle svg{display:block;stroke:currentColor;transform:scaleY(1)!important;transition:transform .22s ease;transform-origin:center}
+.ed-brand .ed-mobile-accordion .ed-mobile-submenu-toggle[aria-expanded=true] svg{transform:scaleY(-1)!important}
+.ed-brand .ed-mobile-accordion .wp-block-navigation__container>.has-child>.wp-block-navigation__submenu-container{display:none!important}
+.ed-brand .ed-mobile-accordion .wp-block-navigation__container>.ed-mobile-submenu-open>.wp-block-navigation__submenu-container{display:flex!important;flex-direction:column;align-items:stretch;visibility:visible!important;opacity:1!important;width:100%!important;height:auto!important;margin:0;padding:8px 0 8px 18px!important}
+}
+@media(prefers-reduced-motion:reduce){.ed-brand .ed-mobile-accordion .ed-mobile-submenu-toggle svg{transition:none}}

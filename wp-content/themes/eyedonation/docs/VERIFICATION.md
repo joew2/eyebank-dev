@@ -117,3 +117,7 @@ Native block validation passed with zero invalid blocks. PHP lint passed for the
 ## October 16, 2026 — AJAX title regression
 
 After two real Load More clicks, verified every card at counts 9, 18, and 27 has a nonempty title, matching title/Read more destinations, matching accessible summary label, blue color, and 20px font size. Confirmed unique post IDs and no mobile overflow. PHP lint passed.
+
+## October 20, 2026 — Mobile accordion checks
+
+At 390, 768, and 1024px verified all four parent submenus start hidden, label/arrow taps toggle without navigation, chevrons animate a vertical flip, Enter/Space toggle, Escape collapses a submenu then closes the overlay, and reopening resets state. Confirmed native desktop hover navigation at 1440px. Reviewed a mobile screenshot.
