@@ -5,4 +5,4 @@
  * Categories: featured
  * Inserter: yes
  */
-echo ed_latest_about_content();
+echo ed_portable_page_content(ed_latest_about_content());

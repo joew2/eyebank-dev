@@ -121,3 +121,11 @@ After two real Load More clicks, verified every card at counts 9, 18, and 27 has
 ## October 20, 2026 — Mobile accordion checks
 
 At 390, 768, and 1024px verified all four parent submenus start hidden, label/arrow taps toggle without navigation, chevrons animate a vertical flip, Enter/Space toggle, Escape collapses a submenu then closes the overlay, and reopening resets state. Confirmed native desktop hover navigation at 1440px. Reviewed a mobile screenshot.
+
+## October 20, 2026 — Inline search verification
+
+Verified at 1440, 1275, 1100, 1025, 1024, 768, 390, and 320px: field appears right of its icon, fits the viewport, receives focus, and closes using icon/Escape/outside click or menu close. No search dialog is created and no horizontal page overflow occurs. Confirmed Enter navigates to the native search results with the entered query, and reduced motion disables transitions. PHP/JavaScript syntax checks passed; desktop/mobile screenshots reviewed.
+
+## October 20, 2026 — Bundled-media verification
+
+All eight page previews and updated Home/About pattern defaults passed native WordPress block validation with zero invalid blocks and no static /uploads/ references. Bundled files are hash-checked by migration 027. The migration completed, preserved earlier migration history, and skipped its completed retry. Browser checks confirmed loaded theme-owned static photos on all eight pages. Hero v4 renders at 1440, 1275, 1024, 390, and 320px with cover fit, 50% 100% bottom alignment, and no page overflow; desktop/mobile screenshots reviewed. Original page content and saved template parts were backed up privately before replacement.

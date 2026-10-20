@@ -95,3 +95,11 @@ Fixed missing titles in Load More responses: REST requests have no global page c
 ## October 20, 2026 — Mobile navigation accordion
 
 Collapsed top-level submenus by default at widths up to 1024px. Tapping a parent label or its reused desktop chevron expands/collapses the submenu with the existing vertical-flip transition. Added accessible button state/control relationships, Enter/Space support, submenu Escape handling, and collapsed state on menu reopening. Desktop native navigation is preserved.
+
+## October 20, 2026 — Inline header search
+
+Replaced the modal search experience with the existing WordPress search form revealed to the right of the magnifier. Added a short slide/fade, responsive field width, automatic focus after opening, icon/Escape/outside-click closing, and reduced-motion support. Kept the native search action and Enter submission. The search control/form move together into the mobile menu; removed obsolete dialog styling and behavior.
+
+## October 20, 2026 — Hero v4 and portable page images
+
+Replaced the homepage hero with the supplied main_hero_photo_v4.jpg and bottom-centered its cover focal point. Bundled all static homepage photos and mapped its original upload paths to theme files. Converted existing Home/About upload references to bundled assets; verified all eight recent pages have theme-owned static photos. Updated current Home/About pattern defaults and added migration 027 without changing prior completed migration payloads.

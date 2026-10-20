@@ -1,0 +1,54 @@
+{
+  "2026/10/donate_life_logo.png": {
+    "file": "donate_life_logo.png",
+    "sha256": "7108956a711b53c617a6d5562583bc590ecb3f9bfc9e8e6a6a4247b331de2c0e"
+  },
+  "2026/10/transplant_recipients_donor_families.jpg": {
+    "file": "transplant_recipients_donor_families.jpg",
+    "sha256": "57fa07524d0d74c8dcbf8b81ca3b37bf819bd07f72ff8490673be3ac8e026489"
+  },
+  "2026/10/research_portal_photo.jpg": {
+    "file": "research_portal_photo.jpg",
+    "sha256": "7addc21157eec02e92ccee8bfb8ad54f0c654c19ee226a9cc7bb4ae76ee176c6"
+  },
+  "2026/10/transplant_portal.jpg": {
+    "file": "transplant_portal.jpg",
+    "sha256": "c85c6073b8e503dd87040e53d8b8e6752d9a37aaba56831e5bfa65fdf21bc370"
+  },
+  "2026/10/worlds_first_eye_bank_photo_desktop.jpg": {
+    "file": "worlds_first_eye_bank_photo_desktop.jpg",
+    "sha256": "ecdc0b3c7f557e1d042e1094716ef886378e563bcbf58de8dd2699b9c7c7fb02"
+  },
+  "2026/10/worlds_first_eye_bank_photo_mobile.jpg": {
+    "file": "worlds_first_eye_bank_photo_mobile.jpg",
+    "sha256": "a1707198bd6b726c1ff09addf6943fbb8a2e75cd5bde23fbfa5ee9eab5a0c46e"
+  },
+  "2026/10/eye-can-see-again.jpg": {
+    "file": "eye-can-see-again.jpg",
+    "sha256": "b865c9b712ea6b8069cea466061dc981c8006604463087bbcf85dc847fade383"
+  },
+  "2026/10/support_our_sight-saving_programs_photo.jpg": {
+    "file": "support_our_sight-saving_programs_photo.jpg",
+    "sha256": "4160fb72b3ad86065d482825872e971de16080815a2593fd4d323a0b0f46c87c"
+  },
+  "2026/10/main_hero_photo.jpg": {
+    "file": "main_hero_photo_v4.jpg",
+    "sha256": "54a89553f237ae1821140026905c7c7712dcd4bb587ce0e99bb3436a508dd3cb"
+  },
+  "2026/10/main_hero_photo_v2.jpg": {
+    "file": "main_hero_photo_v4.jpg",
+    "sha256": "54a89553f237ae1821140026905c7c7712dcd4bb587ce0e99bb3436a508dd3cb"
+  },
+  "2026/10/main_hero_photo_v4.jpg": {
+    "file": "main_hero_photo_v4.jpg",
+    "sha256": "54a89553f237ae1821140026905c7c7712dcd4bb587ce0e99bb3436a508dd3cb"
+  },
+  "2026/10/about-hero-photo-desktop.jpg": {
+    "file": "../about-hero-v2/about-hero-photo-desktop.jpg",
+    "sha256": "2cbcd876999b8b51c7841dd3951fd28c220c301ba930d3474c6757f11aa61e21"
+  },
+  "2026/10/about-hero-photo-mobile.jpg": {
+    "file": "../about-hero-v2/about-hero-photo-mobile.jpg",
+    "sha256": "edbd0e73d61c8fa362c795fd079a36bf92fdd91e4b57071048ca4adca57095f7"
+  }
+}

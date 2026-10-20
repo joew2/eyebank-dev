@@ -1,0 +1,27 @@
+<?php
+namespace EyeDonation\SiteMigrations;
+defined('ABSPATH') || exit;
+final class PortablePageMediaMigration {
+ const ID='027_bundle_page_media';
+ public static function checksum(){
+  $root=get_theme_file_path('/assets/portable-pages/');$assets=json_decode(file_get_contents($root.'manifest.json'),true);$files=[__FILE__,get_theme_file_path('/inc/portable-pages.php'),$root.'manifest.json'];
+  foreach($assets as $asset){$file=$root.$asset['file'];if(!is_file($file)||hash_file('sha256',$file)!==$asset['sha256'])fail('Portable image is missing or changed.');$files[]=$file;}
+  $files=array_unique($files);sort($files);$hash=hash_init('sha256');foreach($files as $file)hash_update($hash,basename($file).file_get_contents($file));return hash_final($hash);
+ }
+ public static function plan(){
+  preflight();$operations=[];
+  foreach(['eye-bank-home','about-the-eye-bank','transplant-recipients-donor-families','our-history','who-leads-the-eye-bank','employment','volunteer','about-donation'] as $slug){$page=get_page_by_path($slug);if(!$page)continue;if(!current_user_can('edit_post',$page->ID))fail('Cannot edit '.$slug);$operations[]=['id'=>(int)$page->ID,'slug'=>$slug,'before'=>$page->post_content,'after'=>ed_portable_page_content($page->post_content,$slug==='eye-bank-home')];}
+  return ['checksum'=>self::checksum(),'operations'=>$operations];
+ }
+ public static function preview(){ $state=history()[self::ID]??[];if(isset($state['checksum'])&&$state['checksum']!==self::checksum())fail('027 checksum changed.');$plan=self::plan();$plan['actor']=get_current_user_id();$plan['created']=time();update_option('edm_portable_media_preview',$plan,false);return $plan; }
+ public static function run(){preflight();$token=lock_acquire();try{
+  $h=history();$state=$h[self::ID]??[];$checksum=self::checksum();if(isset($state['checksum'])&&$state['checksum']!==$checksum)fail('027 checksum changed.');if(($state['status']??'')==='completed')return 'Portable page media already installed; later edits preserved.';
+  $preview=get_option('edm_portable_media_preview');if(!$preview||$preview['actor']!==get_current_user_id()||$preview['checksum']!==$checksum||$preview['created']<time()-DAY_IN_SECONDS)fail('Fresh portable-media preview required.');$plan=$state['plan']??$preview;
+  foreach($plan['operations'] as $op){$p=get_page_by_path($op['slug']);if(!$p||(int)$p->ID!==$op['id'])fail('Page destination changed.');$current=$p->post_content;if($current!==$op['before']&&$current!==$op['after'])fail('Page edited after preview: '.$op['slug']);if(!empty($state['operations'][$op['id']])&&$current!==$op['after'])fail('Migrated page was edited.');}
+  $state=array_merge($state,['status'=>'running','checksum'=>$checksum,'actor'=>get_current_user_id(),'plan'=>$plan]);$h[self::ID]=$state;lock_check($token);save_history($h);
+  foreach($plan['operations'] as $op){lock_check($token);$current=get_post_field('post_content',$op['id']);if($current!==$op['after']){if($current!==$op['before'])fail('Page changed during migration.');$result=wp_update_post(['ID'=>$op['id'],'post_content'=>wp_slash($op['after'])],true);if(is_wp_error($result))fail($result->get_error_message());}if(get_post_field('post_content',$op['id'])!==$op['after'])fail('Page media verification failed.');$state['operations'][$op['id']]=true;$h[self::ID]=$state;save_history($h);}
+  $state['status']='completed';$state['completed']=time();$h[self::ID]=$state;save_history($h);return 'Homepage hero v4 and bundled static page media installed.';
+ }finally{lock_release($token);}}
+}
+foreach(['preview','run'] as $mode)add_action('admin_post_edm_portable_media_'.$mode,function()use($mode){if(!current_user_can('manage_options'))wp_die('Unauthorized');check_admin_referer('edm_portable_media_'.$mode);try{if($mode==='run'&&(empty($_POST['backup'])||empty($_POST['replace'])))fail('Backup and replacement acknowledgment required.');$result=$mode==='preview'?PortablePageMediaMigration::preview():PortablePageMediaMigration::run();update_option('edm_portable_media_notice',is_string($result)?$result:'Preview ready.',false);}catch(\Throwable $e){update_option('edm_portable_media_notice',$e->getMessage(),false);}wp_safe_redirect(admin_url('tools.php?page=eyedonation-migrations#edm-portable-media'));exit;});
+add_action('admin_footer',function(){if(($_GET['page']??'')!=='eyedonation-migrations'||!current_user_can('manage_options'))return;echo '<div class="wrap" id="edm-portable-media"><h2>027 — Bundle page media and update homepage hero</h2><p>Updates static image references on the eight recent landing pages to bundled theme files and installs hero v4 with bottom alignment. Text, links, forms, and news posts are preserved.</p><p>'.esc_html(get_option('edm_portable_media_notice','')).'</p>';foreach(['preview'=>'Preview portable page media','run'=>'Apply / Resume portable page media'] as $mode=>$label){echo '<form method="post" action="'.esc_url(admin_url('admin-post.php')).'"><input type="hidden" name="action" value="edm_portable_media_'.$mode.'">';wp_nonce_field('edm_portable_media_'.$mode);if($mode==='run')echo '<label><input type="checkbox" name="backup" value="1" required> I have a recoverable backup.</label><br><label><input type="checkbox" name="replace" value="1" required> Apply the previewed image changes.</label>';submit_button($label);echo '</form>';}$p=get_option('edm_portable_media_preview');if($p)echo '<details><summary>Current / proposed content</summary><pre>'.esc_html(wp_json_encode($p,JSON_PRETTY_PRINT)).'</pre></details>';echo '</div>';});

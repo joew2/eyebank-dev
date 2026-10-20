@@ -42,3 +42,4 @@ require DIR.'/migrations/024_reflow_our_history.php';
 require DIR.'/migrations/025_reflow_volunteer.php';
 require DIR.'/migrations/026_install_about_donation.php';
 require DIR.'/migrations/027_install_givingtuesday.php';
+require DIR.'/migrations/027_bundle_page_media.php';
