@@ -218,6 +218,13 @@
       "postTypes": [
         "page"
       ]
+    },
+    {
+      "name": "givingtuesday",
+      "title": "EyeDonation Giving Tuesday",
+      "postTypes": [
+        "page"
+      ]
     }
   ],
   "templateParts": [
