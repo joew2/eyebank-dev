@@ -129,3 +129,15 @@ Verified at 1440, 1275, 1100, 1025, 1024, 768, 390, and 320px: field appears rig
 ## October 20, 2026 — Bundled-media verification
 
 All eight page previews and updated Home/About pattern defaults passed native WordPress block validation with zero invalid blocks and no static /uploads/ references. Bundled files are hash-checked by migration 027. The migration completed, preserved earlier migration history, and skipped its completed retry. Browser checks confirmed loaded theme-owned static photos on all eight pages. Hero v4 renders at 1440, 1275, 1024, 390, and 320px with cover fit, 50% 100% bottom alignment, and no page overflow; desktop/mobile screenshots reviewed. Original page content and saved template parts were backed up privately before replacement.
+
+## October 20, 2026 — Full hero photograph on large screens
+
+Above 1275px, the homepage hero uses the supplied image’s 1600:895 aspect ratio so the entire photograph is visible. The existing 500px laptop framing and mobile layout remain. Verified actual rendered ratios at 1276, 1440, 1728, 1920, and 2560px, plus preserved laptop/mobile dimensions and no overflow.
+
+## October 20, 2026 — Hero donor signup overlay
+
+Kept the editable donor panel inside the homepage hero instead of moving it to the document body. Positioned it at the right edge, 60px above the hero bottom, with matching rounded outer corners and existing registration destination. Verified placement at 1275, 1440, and 1920px and confirmed it scrolls away with the image. Existing tablet/mobile header signup remains in use.
+
+## October 21, 2026 — Centered mobile header
+
+Removed the inline Donate Life signup from the compact mobile/tablet header and centered the Eye-Bank logo independently of the right-hand hamburger. Verified centering, no overflow, and functioning accordion navigation at 320, 390, 768, and 1024px, plus desktop navigation at 1440px.

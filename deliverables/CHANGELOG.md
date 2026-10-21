@@ -103,3 +103,23 @@ Replaced the modal search experience with the existing WordPress search form rev
 ## October 20, 2026 — Hero v4 and portable page images
 
 Replaced the homepage hero with the supplied main_hero_photo_v4.jpg and bottom-centered its cover focal point. Bundled all static homepage photos and mapped its original upload paths to theme files. Converted existing Home/About upload references to bundled assets; verified all eight recent pages have theme-owned static photos. Updated current Home/About pattern defaults and added migration 027 without changing prior completed migration payloads.
+
+## October 20, 2026 — Full hero photograph on large screens
+
+Above 1275px, the homepage hero uses the supplied image’s 1600:895 aspect ratio so the entire photograph is visible. The existing 500px laptop framing and mobile layout remain. Verified actual rendered ratios at 1276, 1440, 1728, 1920, and 2560px, plus preserved laptop/mobile dimensions and no overflow.
+
+## October 20, 2026 — Hero donor signup overlay
+
+Kept the editable donor panel inside the homepage hero instead of moving it to the document body. Positioned it at the right edge, 60px above the hero bottom, with matching rounded outer corners and existing registration destination. Verified placement at 1275, 1440, and 1920px and confirmed it scrolls away with the image. Existing tablet/mobile header signup remains in use.
+
+## October 20, 2026 — Footer resource links
+
+Renamed Researchers to Research Portal and Surgeons to Transplant Portal. Replaced the separate recipient/family links with Transplant Recipients & Donor Families linking to /transplant-recipients-donor-families/. Updated both the theme default and saved editable footer, preserving other links.
+
+## October 20, 2026 — Internal hero donor destination
+
+Changed the homepage hero signup to /become-a-donor/. Updated the editable homepage and reusable pattern; scoped rendering also resolves legacy Donate Life destinations on this hero panel. Other navigation and mobile header destinations remain unchanged.
+
+## October 21, 2026 — Centered mobile header
+
+Removed the inline Donate Life signup from the compact mobile/tablet header and centered the Eye-Bank logo independently of the right-hand hamburger. Verified centering, no overflow, and functioning accordion navigation at 320, 390, 768, and 1024px, plus desktop navigation at 1440px.

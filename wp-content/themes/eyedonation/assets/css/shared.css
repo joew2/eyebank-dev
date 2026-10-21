@@ -41,3 +41,8 @@
 
 /* Keep the supplied homepage photo's lower edge visible at every breakpoint. */
 .ed-hero .wp-block-cover__image-background{object-position:center bottom!important}
+/* Larger screens show the complete 1600 × 895 hero; laptop framing stays compact. */
+@media(min-width:1276px){.wp-block-cover.ed-hero{aspect-ratio:1600/895;height:auto;min-height:0;padding:0}.ed-hero .wp-block-cover__inner-container{min-height:0;height:auto}}
+
+/* Donor signup belongs to the hero and scrolls away with the photograph. */
+.ed-hero{position:relative}.ed-hero>.wp-block-cover__inner-container{position:static}.ed-hero .ed-callout.ed-donor-panel{position:absolute;left:auto;right:0;top:auto;bottom:60px;transform:none;transform-origin:right center;z-index:2;border-radius:28px 0 0 28px}

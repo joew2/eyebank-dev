@@ -8,4 +8,4 @@
  * Inserter: yes
  */
 defined('ABSPATH') || exit;
-echo ed_portable_homepage_content();
+echo ed_update_hero_donor_link(ed_portable_homepage_content());
