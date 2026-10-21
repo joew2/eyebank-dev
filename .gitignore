@@ -3,7 +3,6 @@
 !/.gitignore
 !/.gitattributes
 !/README.md
-!/Spec/
 !/deliverables/
 !/wp-content/
 /wp-content/*
@@ -58,3 +57,6 @@ wp-config*.php
 
 # Combined locally authored accessibility and translation widget.
 !/wp-content/plugins/custom-accessibility-translation/
+
+# Design references stay local; deployable assets live in the theme.
+/Spec/
