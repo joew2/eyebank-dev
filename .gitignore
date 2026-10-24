@@ -60,3 +60,6 @@ wp-config*.php
 
 # Design references stay local; deployable assets live in the theme.
 /Spec/
+
+# Locally authored newsletter archive and administration.
+!/wp-content/plugins/custom-newsletters/

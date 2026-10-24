@@ -123,3 +123,11 @@ Changed the homepage hero signup to /become-a-donor/. Updated the editable homep
 ## October 21, 2026 — Centered mobile header
 
 Removed the inline Donate Life signup from the compact mobile/tablet header and centered the Eye-Bank logo independently of the right-hand hamburger. Verified centering, no overflow, and functioning accordion navigation at 320, 390, 768, and 1024px, plus desktop navigation at 1440px.
+
+## October 21, 2026 — Blue photo hovers and stationary homepage buttons
+
+Changed shared linked-photo/news hover tint from black to #0345ab, retaining its existing gradient transparency and image zoom. Home, About Us, and About Donation use the shared effect. Made the homepage About Us and Give Now labels bold and removed hover/focus translation while retaining color and shadow feedback.
+
+## October 21, 2026 — Compact About hero v3
+
+Replaced the About Us desktop/mobile hero photographs with the supplied watermarked images, bundled under assets/about-hero-v3. Desktop height follows the new 1700:916 proportion within a 520–700px range; the introduction stays near the bottom with 40px clear below it. Bottom-right framing protects the watermark when cropping is needed. Mobile uses the new 900:485 photograph ratio with the introduction beneath it. Added scoped migration 028 and updated the reusable About pattern/backup layout.

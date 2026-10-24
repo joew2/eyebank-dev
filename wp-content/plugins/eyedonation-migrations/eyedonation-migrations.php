@@ -43,3 +43,7 @@ require DIR.'/migrations/025_reflow_volunteer.php';
 require DIR.'/migrations/026_install_about_donation.php';
 require DIR.'/migrations/027_install_givingtuesday.php';
 require DIR.'/migrations/027_bundle_page_media.php';
+require DIR.'/migrations/028_update_about_hero_v3.php';
+require DIR.'/migrations/029_install_sign_up.php';
+require DIR.'/migrations/030_update_givingtuesday_copy.php';
+require DIR.'/migrations/031_update_givingtuesday_hashtag.php';

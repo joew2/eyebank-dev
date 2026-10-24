@@ -225,6 +225,20 @@
       "postTypes": [
         "page"
       ]
+    },
+    {
+      "name": "sign-up",
+      "title": "Mailing List Signup \u2014 Editable Page",
+      "postTypes": [
+        "page"
+      ]
+    },
+    {
+      "name": "sign-up-layout",
+      "title": "Mailing List Signup \u2014 Backup Layout",
+      "postTypes": [
+        "page"
+      ]
     }
   ],
   "templateParts": [

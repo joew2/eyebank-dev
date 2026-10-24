@@ -141,3 +141,7 @@ Kept the editable donor panel inside the homepage hero instead of moving it to t
 ## October 21, 2026 — Centered mobile header
 
 Removed the inline Donate Life signup from the compact mobile/tablet header and centered the Eye-Bank logo independently of the right-hand hamburger. Verified centering, no overflow, and functioning accordion navigation at 320, 390, 768, and 1024px, plus desktop navigation at 1440px.
+
+## October 21, 2026 — About hero v3 verification
+
+PHP lint and native WordPress block validation passed. Migration 028 updated only the two About hero image blocks, preserved earlier migration history, and skipped its completed retry; original content saved privately. Browser checks at 1440, 1275, 1024, 782, 768, 390, and 320px verified the correct bundled sources, bottom-right alignment, loaded photos, compact desktop height, watermark clearance, mobile text below the image, and no horizontal overflow. Desktop/mobile screenshots reviewed.

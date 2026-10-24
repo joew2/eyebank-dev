@@ -4,9 +4,12 @@
 .editor-styles-wrapper .ed-about-hero{display:block;min-height:0;padding:0}.editor-styles-wrapper .ed-about-hero-desktop,.editor-styles-wrapper .ed-about-hero-mobile{display:block!important;position:relative!important;inset:auto;max-height:420px;overflow:hidden}.editor-styles-wrapper .ed-about-intro{position:relative;width:100%}
 
 /* Tighter hero framing for the approved replacement photos. */
-@media(min-width:782px){.ed-about-hero{min-height:clamp(620px,58vw,820px);padding:28vw 24px 32px}.ed-about-hero>figure img{object-position:center top}.ed-about-intro{max-width:1200px}}
-@media(max-width:781px){.ed-about-hero>figure{height:48vw}.ed-about-hero>figure img{object-position:center 35%}}
+@media(min-width:782px){.ed-about-hero{min-height:0;height:clamp(520px,53.882353vw,700px);padding:24px 24px 40px}.ed-about-hero>figure img{object-position:right bottom}.ed-about-intro{max-width:1200px}}
+@media(max-width:781px){.ed-about-hero>figure{height:auto;aspect-ratio:900/485}.ed-about-hero>figure img{object-position:right bottom}}
 .editor-styles-wrapper .ed-about-hero{min-height:0;padding:0}.editor-styles-wrapper .ed-about-intro{transform:none}
 
 /* Three percent shorter photo cards, preserving the bottom of each image. */
 .ed-about .ed-about-card .wp-block-cover__image-background{object-position:center bottom}@media(max-width:600px){.ed-about .ed-about-card{min-height:291px}}
+
+.editor-styles-wrapper .ed-about-hero{height:auto}
+@media(min-width:782px){.ed-about-hero>.ed-about-intro{margin: auto auto 0!important}}

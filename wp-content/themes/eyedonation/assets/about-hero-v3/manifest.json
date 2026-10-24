@@ -1,0 +1,10 @@
+{
+  "desktop": {
+    "file": "photo-about-eye-bank-desktop.jpg",
+    "sha256": "b9a6d1946faa209fa05e53aa0f2f38144405678eb70d972d2ac795858914909b"
+  },
+  "mobile": {
+    "file": "photo-about-eye-bank-mobile.jpg",
+    "sha256": "d3ed6dc301c458e231168c0e9c761d5bea5f3e8d406df73a33787d6b4c1ebb3f"
+  }
+}
