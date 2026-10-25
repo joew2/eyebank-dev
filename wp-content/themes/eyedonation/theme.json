@@ -309,6 +309,20 @@
       "postTypes": [
         "page"
       ]
+    },
+    {
+      "name": "faqs",
+      "title": "FAQs \u2014 Editable Page",
+      "postTypes": [
+        "page"
+      ]
+    },
+    {
+      "name": "faqs-layout",
+      "title": "FAQs \u2014 Backup Layout",
+      "postTypes": [
+        "page"
+      ]
     }
   ],
   "templateParts": [

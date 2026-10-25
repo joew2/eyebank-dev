@@ -52,3 +52,4 @@ require DIR.'/migrations/033_install_donor_families.php';
 require DIR.'/migrations/034_install_become_a_donor.php';
 require DIR.'/migrations/035_install_board_of_directors.php';
 require DIR.'/migrations/036_install_contact_us.php';
+require DIR.'/migrations/037_install_faqs.php';
