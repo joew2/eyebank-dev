@@ -239,6 +239,34 @@
       "postTypes": [
         "page"
       ]
+    },
+    {
+      "name": "cornea-recipients",
+      "title": "Write to a Donor Family \u2014 Editable Page",
+      "postTypes": [
+        "page"
+      ]
+    },
+    {
+      "name": "cornea-recipients-layout",
+      "title": "Write to a Donor Family \u2014 Backup Layout",
+      "postTypes": [
+        "page"
+      ]
+    },
+    {
+      "name": "donor-families",
+      "title": "Write to a Transplant Recipient \u2014 Editable Page",
+      "postTypes": [
+        "page"
+      ]
+    },
+    {
+      "name": "donor-families-layout",
+      "title": "Write to a Transplant Recipient \u2014 Backup Layout",
+      "postTypes": [
+        "page"
+      ]
     }
   ],
   "templateParts": [

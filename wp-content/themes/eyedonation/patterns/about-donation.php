@@ -4,4 +4,4 @@
  * Slug: eyedonation/about-donation
  * Categories: featured
  */
-echo ed_about_donation_content();
+echo ed_newsletter_copy(ed_about_donation_content());

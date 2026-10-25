@@ -1,5 +1,5 @@
 <?php
-/** Homepage news heading destination, shared by saved content and the backup pattern. */
+/** Homepage heading refinements, shared by saved content and the backup pattern. */
 defined('ABSPATH') || exit;
 
 function ed_link_homepage_news_heading($html) {
@@ -11,5 +11,13 @@ function ed_link_homepage_news_heading($html) {
 }
 
 add_filter('render_block_core/heading', function ($html) {
-    return is_front_page() ? ed_link_homepage_news_heading($html) : $html;
+    return is_front_page() ? ed_homepage_resource_label(ed_link_homepage_news_heading($html)) : $html;
 });
+
+function ed_homepage_resource_label($html) {
+    return preg_replace(
+        '~(<h3\b[^>]*>\s*<a\b[^>]*>)Transplant Recipients (?:&amp;|&) Donor Families~',
+        '$1Transplant Recipients<br>&amp; Donor Families',
+        $html
+    );
+}

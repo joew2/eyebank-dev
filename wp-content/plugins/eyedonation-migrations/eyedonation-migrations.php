@@ -47,3 +47,5 @@ require DIR.'/migrations/028_update_about_hero_v3.php';
 require DIR.'/migrations/029_install_sign_up.php';
 require DIR.'/migrations/030_update_givingtuesday_copy.php';
 require DIR.'/migrations/031_update_givingtuesday_hashtag.php';
+require DIR.'/migrations/032_install_cornea_recipients.php';
+require DIR.'/migrations/033_install_donor_families.php';

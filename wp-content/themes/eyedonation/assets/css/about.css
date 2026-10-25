@@ -13,3 +13,10 @@
 
 .editor-styles-wrapper .ed-about-hero{height:auto}
 @media(min-width:782px){.ed-about-hero>.ed-about-intro{margin: auto auto 0!important}}
+
+/* Larger desktops retain the complete 1700 × 916 photo; laptop framing stays compact. */
+@media(min-width:1300px){.ed-about-hero{box-sizing:border-box;height:auto;aspect-ratio:1700/916}}
+.editor-styles-wrapper .ed-about-hero{aspect-ratio:auto}
+
+/* Align the outer mission circles with the shared 1050px content edges. */
+@media(min-width:1200px){.ed-about .ed-about-mission-grid{display:grid;grid-template-columns:repeat(3,minmax(0,279.36px));justify-content:space-between}.ed-about-mission-grid figure{width:100%}}

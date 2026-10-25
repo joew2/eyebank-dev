@@ -8,4 +8,4 @@
  * Inserter: yes
  */
 defined('ABSPATH') || exit;
-echo ed_sign_up_content();
+echo ed_sign_up_copy(ed_sign_up_content());

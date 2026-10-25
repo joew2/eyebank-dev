@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Custom Newsletters CWS
  * Description: Editable newsletter PDF archive and accessible About Donation popup. Manage under Newsletters in the admin sidebar.
- * Version: 1.0.1
+ * Version: 1.0.2
  * Author: Creative Way Solutions
  * License: GPL-3.0-or-later
  * Requires at least: 6.2
@@ -39,6 +39,11 @@ function cwsnl_seed() {
 }
 register_activation_hook(__FILE__,'cwsnl_seed');
 
+/** Normalize only this newsletter's established name; preserve other publication titles. */
+function cwsnl_display_title($post) {
+    $title=get_the_title($post);
+    return preg_match('/^eye(?:-| )to(?:-| )eye$/i',trim($title)) ? 'eye to eye' : $title;
+}
 function cwsnl_pdf_url($id) {
     $attachment=(int)get_post_meta($id,'_cwsnl_pdf_id',true);
     if ($attachment && get_post_mime_type($attachment)==='application/pdf') return wp_get_attachment_url($attachment) ?: '';
@@ -49,7 +54,7 @@ add_action('add_meta_boxes',function () {
     add_meta_box('cwsnl-details','Newsletter issue and PDF',function ($post) {
         wp_nonce_field('cwsnl_save','cwsnl_nonce');
         echo '<p><label for="cwsnl-issue"><strong>Issue</strong></label><br><input required class="widefat" id="cwsnl-issue" name="cwsnl_issue" value="'.esc_attr(get_post_meta($post->ID,'_cwsnl_issue',true)).'" placeholder="Summer 2026"></p>';
-        echo '<p>Use the title field for the newsletter name, such as Eye To Eye. Use Order in Page Attributes to sort issues (lowest first).</p>';
+        echo '<p>Use the title field for the newsletter name, such as eye to eye. Use Order in Page Attributes to sort issues (lowest first).</p>';
         echo '<input type="hidden" id="cwsnl-pdf-id" name="cwsnl_pdf_id" value="'.esc_attr(get_post_meta($post->ID,'_cwsnl_pdf_id',true)).'">';
         echo '<p><button type="button" class="button" id="cwsnl-select-pdf">Upload or select PDF</button> <button type="button" class="button" id="cwsnl-remove-pdf">Remove PDF</button></p>';
         echo '<p id="cwsnl-pdf-current">';
@@ -75,7 +80,7 @@ add_action('admin_enqueue_scripts',function () {
     $screen=get_current_screen();
     if (!$screen || $screen->post_type!=='cws_newsletter') return;
     wp_enqueue_media();
-    wp_enqueue_script('cwsnl-admin',plugins_url('assets/admin.js',__FILE__),['media-editor'],'1.0.1',true);
+    wp_enqueue_script('cwsnl-admin',plugins_url('assets/admin.js',__FILE__),['media-editor'],'1.0.2',true);
 });
 add_filter('manage_cws_newsletter_posts_columns',function ($cols) {unset($cols['date']);$cols['issue']='Issue';$cols['pdf']='PDF';$cols['order']='Order';return $cols;});
 add_action('manage_cws_newsletter_posts_custom_column',function ($col,$id) {
@@ -92,19 +97,19 @@ add_filter('render_block_core/button',function ($html,$block) {
 },10,2);
 add_action('wp_enqueue_scripts',function () {
     if (!is_page('about-donation')) return;
-    wp_enqueue_style('cwsnl',plugins_url('assets/newsletters.css',__FILE__),[],'1.0.1');
-    wp_enqueue_script('cwsnl',plugins_url('assets/newsletters.js',__FILE__),[],'1.0.1',true);
+    wp_enqueue_style('cwsnl',plugins_url('assets/newsletters.css',__FILE__),[],'1.0.2');
+    wp_enqueue_script('cwsnl',plugins_url('assets/newsletters.js',__FILE__),[],'1.0.2',true);
 });
 add_action('wp_footer',function () {
     if (!is_page('about-donation')) return;
     $open=isset($_GET['newsletters']) && $_GET['newsletters']==='1';
-    echo '<dialog id="cwsnl-dialog" class="cwsnl-dialog" aria-labelledby="cwsnl-title"'.($open?' open data-cwsnl-initial':'').'><div class="cwsnl-panel"><a class="cwsnl-close" data-cwsnl-close href="'.esc_url(home_url('/about-donation/')).'" aria-label="Close newsletter archive">×</a><h2 id="cwsnl-title">Previous newsletters</h2><p>Browse Eye To Eye and download an issue below.</p><div class="cwsnl-table-wrap"><table><caption class="screen-reader-text">Available newsletter PDFs, newest issues first</caption><thead><tr><th scope="col">Title</th><th scope="col">Issue</th><th scope="col">PDF</th></tr></thead><tbody>';
+    echo '<dialog id="cwsnl-dialog" class="cwsnl-dialog" aria-labelledby="cwsnl-title"'.($open?' open data-cwsnl-initial':'').'><div class="cwsnl-panel"><a class="cwsnl-close" data-cwsnl-close href="'.esc_url(home_url('/about-donation/')).'" aria-label="Close newsletter archive">×</a><h2 id="cwsnl-title">Previous newsletters</h2><p>Browse eye to eye and download an issue below.</p><div class="cwsnl-table-wrap"><table><caption class="screen-reader-text">Available newsletter PDFs, newest issues first</caption><thead><tr><th scope="col">Title</th><th scope="col">Issue</th><th scope="col">PDF</th></tr></thead><tbody>';
     $posts=get_posts(['post_type'=>'cws_newsletter','post_status'=>'publish','numberposts'=>-1,'orderby'=>['menu_order'=>'ASC','ID'=>'DESC']]);
     $count=0;
     foreach ($posts as $post) {
         $url=cwsnl_pdf_url($post->ID);if (!$url) continue;$count++;
         $issue=get_post_meta($post->ID,'_cwsnl_issue',true);
-        echo '<tr><td>'.esc_html(get_the_title($post)).'</td><td>'.esc_html($issue).'</td><td><a class="cwsnl-download" href="'.esc_url($url).'" download aria-label="'.esc_attr('Download '.get_the_title($post).' — '.$issue.' (PDF)').'">Download <span class="screen-reader-text">PDF</span></a></td></tr>';
+        echo '<tr><td>'.esc_html(cwsnl_display_title($post)).'</td><td>'.esc_html($issue).'</td><td><a class="cwsnl-download" href="'.esc_url($url).'" download aria-label="'.esc_attr('Download '.cwsnl_display_title($post).' — '.$issue.' (PDF)').'">Download <span class="screen-reader-text">PDF</span></a></td></tr>';
     }
     if (!$count) echo '<tr><td colspan="3">Newsletters will be available soon.</td></tr>';
     echo '</tbody></table></div><p class="cwsnl-note">Files are in PDF format.</p></div></dialog>';

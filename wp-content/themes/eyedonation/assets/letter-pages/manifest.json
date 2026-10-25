@@ -1,0 +1,26 @@
+{
+  "write_to_a_recipient.jpg": {
+    "source": "2019/05/write_to_a_recipient.jpg",
+    "sha256": "2ddd96d138dddfef46fdc6d4772fccede8dd81447c254ba015bcf10cf10c0416"
+  },
+  "header-donor-family.jpg": {
+    "source": "2019/04/header-donor-family.jpg",
+    "sha256": "c73784d38e13d027b8c73393115bec80dec1b1f986be786b98ddb4b5b53bc535"
+  },
+  "donor-family-child_q60.jpg": {
+    "source": "2017/08/donor-family-child_q60.jpg",
+    "sha256": "f8f96f46b3466fd30dae32151f69d90555d413326454b4a30c2dd63948548475"
+  },
+  "donor-family-thank-you_q60.jpg": {
+    "source": "2017/08/donor-family-thank-you_q60.jpg",
+    "sha256": "b82d0285077db9726f8a66d5f4e78cf6fb1e819e81e2b8b834b927f70dfb29cc"
+  },
+  "donor-family-usps_q60.jpg": {
+    "source": "2017/08/donor-family-usps_q60.jpg",
+    "sha256": "98fff2ba7e9417edb813d7242fdafdcd51d51f9a3f34dc7fb9a599b7f4960f82"
+  },
+  "a_note_for_you_q60.jpg": {
+    "source": "2017/09/a_note_for_you_q60.jpg",
+    "sha256": "b2a07a1e86e9bdf64bc34b4d7e37ed8b92018c151a7833e946e714e7323e3779"
+  }
+}
