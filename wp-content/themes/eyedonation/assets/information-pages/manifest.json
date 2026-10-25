@@ -1,0 +1,14 @@
+{
+  "header-become-a-donor.jpg": {
+    "source": "2017/06/header-become-a-donor.jpg",
+    "sha256": "f0779b6cdefd8d415e5dfd0d1d23e9ea92e0f1b5be2eccbf5699d8e39c7c4eb4"
+  },
+  "header-the-board-of-directors.jpg": {
+    "source": "2017/06/header-the-board-of-directors.jpg",
+    "sha256": "61cfffd91e62125392f84767e7db157f6e60bbca5a60e6214a0cd2882193e5e8"
+  },
+  "header-contact-us.jpg": {
+    "source": "2017/06/header-contact-us.jpg",
+    "sha256": "d7aa148541d5657eeaf3f3b698a02733773b5ed0072908236075182d35151a4d"
+  }
+}

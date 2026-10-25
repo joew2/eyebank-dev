@@ -49,3 +49,6 @@ require DIR.'/migrations/030_update_givingtuesday_copy.php';
 require DIR.'/migrations/031_update_givingtuesday_hashtag.php';
 require DIR.'/migrations/032_install_cornea_recipients.php';
 require DIR.'/migrations/033_install_donor_families.php';
+require DIR.'/migrations/034_install_become_a_donor.php';
+require DIR.'/migrations/035_install_board_of_directors.php';
+require DIR.'/migrations/036_install_contact_us.php';

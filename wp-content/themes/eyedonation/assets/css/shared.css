@@ -74,3 +74,9 @@
 
 /* Center newsletter actions in the stacked mobile layout only. */
 @media(max-width:781px){.ed-about-donation .ed-newsletter-panel .wp-block-buttons{justify-content:center;align-items:center}}
+
+/* Donor language cards use subsection sizing rather than homepage column headings. */
+.ed-become-donor .ed-donor-language>h2{font-size:24px;line-height:1.3}
+.ed-become-donor .ed-donor-language .wp-block-button__link{background:#0345ab}
+.ed-become-donor .ed-donor-language .wp-block-button__link:hover{background:#013688}
+@media(max-width:781px){.ed-become-donor .ed-donor-language>h2{font-size:22px}}

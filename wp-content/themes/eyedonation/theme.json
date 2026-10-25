@@ -267,6 +267,48 @@
       "postTypes": [
         "page"
       ]
+    },
+    {
+      "name": "become-a-donor",
+      "title": "Become a Donor \u2014 Editable Page",
+      "postTypes": [
+        "page"
+      ]
+    },
+    {
+      "name": "become-a-donor-layout",
+      "title": "Become a Donor \u2014 Backup Layout",
+      "postTypes": [
+        "page"
+      ]
+    },
+    {
+      "name": "board-of-directors",
+      "title": "Board of Directors \u2014 Editable Page",
+      "postTypes": [
+        "page"
+      ]
+    },
+    {
+      "name": "board-of-directors-layout",
+      "title": "Board of Directors \u2014 Backup Layout",
+      "postTypes": [
+        "page"
+      ]
+    },
+    {
+      "name": "contact-us",
+      "title": "Contact Us \u2014 Editable Page",
+      "postTypes": [
+        "page"
+      ]
+    },
+    {
+      "name": "contact-us-layout",
+      "title": "Contact Us \u2014 Backup Layout",
+      "postTypes": [
+        "page"
+      ]
     }
   ],
   "templateParts": [
