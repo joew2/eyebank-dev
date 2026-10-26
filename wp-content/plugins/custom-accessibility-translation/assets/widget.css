@@ -8,3 +8,10 @@
 #cwsatp-widget #cwsatp-languages{width:208.333333px}#cwsatp-widget #cwsatp-languages a{font-size:22.222222px}
 /* Optional tablet/phone override, anchored to the viewport with upward-opening menus. */
 #cwsatp-widget.cwsatp-mobile-bottom{position:fixed;top:auto;bottom:5px;right:5px;left:auto;margin:0;transform-origin:100% 100%}#cwsatp-widget.cwsatp-mobile-bottom #cwsatp-panel{top:auto;bottom:0;right:66px;left:auto;max-height:calc(100dvh - 20px)}#cwsatp-widget.cwsatp-mobile-bottom #cwsatp-languages{top:auto;bottom:100%;right:0;left:auto}@media(max-width:600px){#cwsatp-widget.cwsatp-mobile-bottom #cwsatp-panel{right:56px}}
+
+/* Desktop/default bottom-of-viewport placement: menus open into available space above. */
+#cwsatp-widget.cwsatp-viewport-bottom{position:fixed;top:auto;bottom:var(--cwsatp-bottom,5px);margin:0;transform-origin:100% 100%}
+#cwsatp-widget.cwsatp-viewport-bottom.cwsatp-side-right{right:5px;left:auto}
+#cwsatp-widget.cwsatp-viewport-bottom.cwsatp-side-left{left:5px;right:auto;transform-origin:0 100%}
+#cwsatp-widget.cwsatp-viewport-bottom #cwsatp-panel{top:auto;bottom:0;max-height:calc(100dvh - var(--cwsatp-bottom,5px) - 16px)}
+#cwsatp-widget.cwsatp-viewport-bottom #cwsatp-languages{top:auto;bottom:100%}

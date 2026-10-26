@@ -4,7 +4,11 @@ One independent plugin combines a wheelchair launcher with a language dropdown b
 
 ## Administration
 
-Open **ATP** in the WordPress admin menu. Set widget visibility, placement, right/left edge, top offset, and whether to remember visitor preferences. **Footer — scrolls with the page** is the default. The widget sits near the lower edge of the theme footer; the panel and language dropdown open upward. **Screen edge — stays visible while scrolling** restores the viewport-fixed mode, with the configured top offset. Themes without a footer element receive a document-flow fallback at the end of the page. Manage English/Spanish page pairs in the same screen. Enabled mappings work in both directions, accept full URLs or paths, and follow the site's current home URL when moved between development and production. Only actual translated page pairs appear in the widget; pages without a pair show the accessibility launcher alone.
+Open **ATP** in the WordPress admin menu. Under **Desktop position**, choose **Footer — scrolls with the page**, **Top of viewport — always visible**, or **Bottom of viewport — always visible**. The viewport means the visible browser window. Bottom placement remains visible while scrolling, uses the chosen left/right side, and opens both controls upward. Set its **Bottom gap** from 0–100px; the side gap is 5px. The **Top gap** applies only to top-of-viewport mode. Footer placement remains the default for new installations, preserving existing behavior until an administrator changes it.
+
+The **Tablets and phones** override is independent: when enabled, widths of 1024px or less always use the bottom-right corner with 5px gaps. When disabled, the selected desktop placement applies at every width. Existing settings retain their meaning, including the legacy `screen` value for top-of-viewport placement. Updating the plugin does not overwrite site settings or translation pairs.
+
+Manage English/Spanish page pairs in the same screen. Enabled mappings work in both directions and follow the site's home URL. Only mapped translated pages show the language switcher.
 
 Activation copies compatible records from the old Custom Translation Navigation Links table once, including disabled records. The original table is preserved and subsequently operates independently. Existing `[spanish_page_link]` and `[english_page_link]` shortcodes remain supported. Disable the old translation and Pojo accessibility plugins when using ATP to avoid duplicate controls. Installation itself does not deactivate other plugins.
 

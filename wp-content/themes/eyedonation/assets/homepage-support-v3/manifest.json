@@ -1,0 +1,14 @@
+{
+  "support-desktop.jpg": {
+    "source": "Spec/Homepage/support_our_sight-saving_programs_photo_desktop.jpg",
+    "sha256": "2307f86586911d4b96392c6c03eb09cb2e0fab54572d9fc529fce2385bb0757e",
+    "width": 1700,
+    "height": 1198
+  },
+  "support-mobile.jpg": {
+    "source": "Spec/Homepage/support_our_sight-saving_programs_mobile.jpg",
+    "sha256": "7a22873745cd2bdb0c1326632408bc19b46188e3491cb4dd2622ef73fe0bc294",
+    "width": 900,
+    "height": 634
+  }
+}

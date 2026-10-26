@@ -54,3 +54,7 @@ require DIR.'/migrations/035_install_board_of_directors.php';
 require DIR.'/migrations/036_install_contact_us.php';
 require DIR.'/migrations/037_install_faqs.php';
 require DIR.'/migrations/038_update_about_hero_v4.php';
+require DIR.'/migrations/039_givingtuesday_attribution.php';
+require DIR.'/migrations/040_update_homepage_support_photo.php';
+require DIR.'/migrations/041_update_homepage_support_responsive.php';
+require DIR.'/migrations/042_update_homepage_support_crop.php';

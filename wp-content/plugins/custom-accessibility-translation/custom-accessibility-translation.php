@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Custom Accessibility Translation CWS
  * Description: A single footer or screen-fixed accessibility toolbar and English/Spanish page switcher. Admin label: ATP.
- * Version: 1.2.0
+ * Version: 1.3.0
  * Author: Creative Way Solutions
  * License: GPL-3.0-or-later
  * Requires at least: 6.2

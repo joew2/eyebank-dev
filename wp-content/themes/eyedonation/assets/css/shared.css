@@ -80,3 +80,23 @@
 .ed-become-donor .ed-donor-language .wp-block-button__link{background:#0345ab}
 .ed-become-donor .ed-donor-language .wp-block-button__link:hover{background:#013688}
 @media(max-width:781px){.ed-become-donor .ed-donor-language>h2{font-size:22px}}
+
+/* Small, readable campaign attribution beneath the English appeal and Spanish banner. */
+.ed-gt-attribution,.ed-givingtuesday .ed-gt-appeal p.ed-gt-attribution{font-family:Arial,Helvetica,sans-serif;font-size:13px;line-height:1.5;text-align:center;margin:24px auto 0;max-width:800px;color:#525252;overflow-wrap:anywhere}
+.ed-gt-attribution a{color:#0345ab;text-decoration:underline;text-underline-offset:2px}.ed-gt-attribution a:hover{color:#013688}
+
+/* Full support photo at its natural ratio, with the caption always unobstructed. */
+.ed-support.ed-support-full-photo{position:relative;min-height:0;padding:0;background:#fff}
+.ed-support-full-photo>.ed-support-photo{margin:0!important;width:100%}
+.ed-support-full-photo>.ed-support-photo img{display:block;width:100%;height:auto;max-width:100%;aspect-ratio:1700/1275}
+.ed-support-full-photo>.ed-support-panel{position:absolute;left:max(5%,calc((100% - var(--ed-content-width,1050px))/2));bottom:60px}
+@media(max-width:781px){.ed-support-full-photo>.ed-support-panel{position:static;width:100%;max-width:1050px;padding:28px 5%;margin:0 auto!important}}
+
+/* Updated crops retain their complete proportions; picture selects only the matching asset. */
+.ed-support-full-photo>.ed-support-photo-responsive picture{display:block;width:100%}
+.ed-support-full-photo>.ed-support-photo-responsive img{aspect-ratio:1700/1198}
+@media(max-width:781px){.ed-support-full-photo>.ed-support-photo-responsive img{aspect-ratio:900/634}}
+
+/* Final tighter support crops retain the full supplied image and bottom caption. */
+.ed-support-full-photo>.ed-support-photo-crop-v2 img{aspect-ratio:1700/1003}
+@media(max-width:781px){.ed-support-full-photo>.ed-support-photo-crop-v2 img{aspect-ratio:900/531}}

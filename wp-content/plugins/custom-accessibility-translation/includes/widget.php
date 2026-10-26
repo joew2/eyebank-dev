@@ -1,7 +1,7 @@
 <?php
 defined('ABSPATH') || exit;
 function cwsatp_defaults() {
-    return ['enabled'=>1, 'placement'=>'footer', 'mobile_bottom'=>1, 'side'=>'right', 'offset'=>160, 'remember'=>1];
+    return ['enabled'=>1, 'placement'=>'footer', 'mobile_bottom'=>1, 'side'=>'right', 'offset'=>160, 'bottom_offset'=>5, 'remember'=>1];
 }
 function cwsatp_settings() { return wp_parse_args(get_option('cwsatp_settings', []), cwsatp_defaults()); }
 function cwsatp_import_legacy_mappings() {
@@ -24,21 +24,34 @@ function cwsatp_import_legacy_mappings() {
     }
     update_option('cwsatp_legacy_imported', 1);
 }
+function cwsatp_sanitize_settings($value) {
+    $value = is_array($value) ? $value : [];
+    $placement = $value['placement'] ?? 'footer';
+    return ['mobile_bottom'=>empty($value['mobile_bottom'])?0:1,
+        'placement'=>in_array($placement,['footer','screen','viewport-bottom'],true)?$placement:'footer',
+        'enabled'=>empty($value['enabled'])?0:1, 'remember'=>empty($value['remember'])?0:1,
+        'side'=>($value['side']??'right')==='left'?'left':'right',
+        'offset'=>max(0,min(500,(int)($value['offset']??160))),
+        'bottom_offset'=>max(0,min(100,(int)($value['bottom_offset']??5)))];
+}
 add_action('admin_init', function () {
-    register_setting('cwsatp_widget', 'cwsatp_settings', ['sanitize_callback'=>function ($value) {
-        $value = is_array($value) ? $value : [];
-        return ['mobile_bottom'=>empty($value['mobile_bottom'])?0:1, 'placement'=>($value['placement']??'footer') === 'screen' ? 'screen' : 'footer', 'enabled'=>empty($value['enabled'])?0:1, 'remember'=>empty($value['remember'])?0:1,
-            'side'=>($value['side']??'right') === 'left' ? 'left' : 'right',
-            'offset'=>max(0,min(500,absint($value['offset']??160)))];
-    }]);
+    register_setting('cwsatp_widget', 'cwsatp_settings', ['sanitize_callback'=>'cwsatp_sanitize_settings']);
 });
 function cwsatp_settings_form() {
     $s = cwsatp_settings();
     echo '<div class="wrap"><h1>Custom Accessibility Translation CWS (ATP)</h1><p>Accessibility controls and language links in one widget. Existing translation pairs are copied on activation; the original records are preserved.</p><form action="'.esc_url(admin_url('options.php')).'" method="post">';
     settings_fields('cwsatp_widget');
-    echo '<p><label><input type="checkbox" name="cwsatp_settings[enabled]" value="1" '.checked($s['enabled'],1,false).'> Show widget</label></p><p><label>Screen edge <select name="cwsatp_settings[side]"><option value="right" '.selected($s['side'],'right',false).'>Right</option><option value="left" '.selected($s['side'],'left',false).'>Left</option></select></label></p><p><label>Top offset (pixels) <input type="number" min="0" max="500" name="cwsatp_settings[offset]" value="'.esc_attr($s['offset']).'"></label></p><p><label><input type="checkbox" name="cwsatp_settings[remember]" value="1" '.checked($s['remember'],1,false).'> Remember visitor preferences on this device</label></p>';
-    echo '<p><label>Placement <select name="cwsatp_settings[placement]"><option value="footer" '.selected($s['placement'],'footer',false).'>Footer — scrolls with the page</option><option value="screen" '.selected($s['placement'],'screen',false).'>Screen edge — stays visible while scrolling</option></select></label></p><p class="description">Top offset applies to screen-edge placement. Footer placement sits near the bottom of the footer.</p>';
-    echo '<p><label><input type="checkbox" name="cwsatp_settings[mobile_bottom]" value="1" '.checked($s['mobile_bottom'],1,false).'> Tablets and phones: fix widget to the bottom-right corner</label></p><p class="description">Applies at viewport widths of 1024px or less, with a 5px gap from the bottom and right edges. Turn off to use the normal placement on every screen size.</p>';
+    echo '<p><label><input type="checkbox" name="cwsatp_settings[enabled]" value="1" '.checked($s['enabled'],1,false).'> Show widget</label></p>';
+    echo '<h2>Desktop position</h2><p><label>Placement <select name="cwsatp_settings[placement]">';
+    foreach (['footer'=>'Footer — scrolls with the page','screen'=>'Top of viewport — always visible','viewport-bottom'=>'Bottom of viewport — always visible'] as $value=>$label) {
+        echo '<option value="'.esc_attr($value).'" '.selected($s['placement'],$value,false).'>'.esc_html($label).'</option>';
+    }
+    echo '</select></label></p><p class="description">The viewport is the visible browser window. Bottom of viewport keeps both icons in the same bottom corner as you scroll; it does not wait for the footer.</p>';
+    echo '<p><label>Widget side <select name="cwsatp_settings[side]"><option value="right" '.selected($s['side'],'right',false).'>Right</option><option value="left" '.selected($s['side'],'left',false).'>Left</option></select></label></p>';
+    echo '<p><label>Top gap (pixels, top-of-viewport mode only) <input type="number" min="0" max="500" name="cwsatp_settings[offset]" value="'.esc_attr($s['offset']).'"></label></p>';
+    echo '<p><label>Bottom gap (pixels, bottom-of-viewport mode only) <input type="number" min="0" max="100" name="cwsatp_settings[bottom_offset]" value="'.esc_attr($s['bottom_offset']).'"></label></p><p class="description">Bottom placement opens the accessibility panel and language list upward. The side gap is 5px.</p>';
+    echo '<h2>Tablets and phones</h2><p><label><input type="checkbox" name="cwsatp_settings[mobile_bottom]" value="1" '.checked($s['mobile_bottom'],1,false).'> Use the bottom-right viewport corner on tablets and phones</label></p><p class="description">At widths of 1024px or less, this overrides the desktop settings with a 5px gap from the bottom and right edges. Turn it off to use the desktop placement and gaps on all screen sizes.</p>';
+    echo '<h2>Visitor preferences</h2><p><label><input type="checkbox" name="cwsatp_settings[remember]" value="1" '.checked($s['remember'],1,false).'> Remember visitor preferences on this device</label></p>';
     submit_button('Save Widget Settings');
     echo '</form><p>Language switching appears only for enabled page pairs below. Unmapped pages never link to an unrelated translation. These links open your existing translated pages; they do not translate content automatically.</p></div>';
 }
@@ -62,7 +75,7 @@ add_action('wp_footer', function () {
     $pair = cwsatp_language_pair(); $spanish = $pair && $pair['current'] === 'es';
     $labels = $spanish ? ['Accesibilidad','Cerrar','Aumentar texto','Reducir texto','Alto contraste','Escala de grises','Subrayar enlaces','Fuente legible','Restablecer','Idioma'] : ['Accessibility','Close','Increase text','Decrease text','High contrast','Grayscale','Underline links','Readable font','Reset','Language'];
     ?>
-    <aside id="cwsatp-widget" class="cwsatp-side-<?php echo esc_attr($s['side']); ?>" style="--cwsatp-top:<?php echo absint($s['offset']); ?>px" data-mobile-bottom="<?php echo absint($s['mobile_bottom']); ?>" data-placement="<?php echo esc_attr($s['placement']); ?>" data-remember="<?php echo absint($s['remember']); ?>" aria-label="<?php echo esc_attr($labels[0].' / '.$labels[9]); ?>">
+    <aside id="cwsatp-widget" class="cwsatp-side-<?php echo esc_attr($s['side']); ?>" style="--cwsatp-top:<?php echo absint($s['offset']); ?>px;--cwsatp-bottom:<?php echo absint($s['bottom_offset']); ?>px" data-mobile-bottom="<?php echo absint($s['mobile_bottom']); ?>" data-placement="<?php echo esc_attr($s['placement']); ?>" data-remember="<?php echo absint($s['remember']); ?>" aria-label="<?php echo esc_attr($labels[0].' / '.$labels[9]); ?>">
       <button class="cwsatp-trigger" type="button" aria-expanded="false" aria-controls="cwsatp-panel" aria-label="<?php echo esc_attr($labels[0]); ?>"><svg viewBox="0 0 32 40" aria-hidden="true" focusable="false"><circle cx="14" cy="5" r="4" fill="currentColor"/><path d="M13 12v12h13l4 10M14 18h10M10 17a11 11 0 1 0 12 18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
       <section id="cwsatp-panel" hidden aria-labelledby="cwsatp-title">
         <div class="cwsatp-panel-heading"><h2 id="cwsatp-title"><?php echo esc_html($labels[0]); ?></h2><button type="button" class="cwsatp-close" aria-label="<?php echo esc_attr($labels[1]); ?>">×</button></div>

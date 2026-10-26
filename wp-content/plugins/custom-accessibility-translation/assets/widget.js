@@ -7,6 +7,7 @@
   const placeWidget = () => {
     const bottom = widget.dataset.mobileBottom === '1' && compactViewport.matches;
     widget.classList.toggle('cwsatp-mobile-bottom', bottom);
+    widget.classList.toggle('cwsatp-viewport-bottom', !bottom && widget.dataset.placement === 'viewport-bottom');
     widget.classList.remove('cwsatp-in-footer', 'cwsatp-footer-fallback');
     if (footer) footer.classList.remove('cwsatp-footer-host', 'cwsatp-footer-left', 'cwsatp-footer-right');
     if (!bottom && widget.dataset.placement === 'footer') {
