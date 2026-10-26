@@ -1,0 +1,10 @@
+{
+  "photo-about-eye-bank-desktop.jpg": {
+    "source": "Spec/About Us/photo-about-eye-bank-desktop_v2.jpg",
+    "sha256": "d13ca7a40a940bf9844ff060cbb8a1b887c1a38b4ecfb28b6793fa15d62dc4d6"
+  },
+  "photo-about-eye-bank-mobile.jpg": {
+    "source": "Spec/About Us/photo-about-eye-bank-mobile_v2.jpg",
+    "sha256": "623a4cf791a2437ae37f5cb6a57ad899f9bc23cb9b31c37b62e0efc204dfeb63"
+  }
+}

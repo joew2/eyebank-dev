@@ -25,3 +25,7 @@ Text was extracted from both supplied PDFs using local PDFKit and compared with 
 The reusable pattern and backup layout now use `ed_latest_about_content()`, which applies the approved desktop/mobile photo replacements to the original content. The live page uses the supplied October 2026 upload URLs. Matching bundled copies provide a portable fallback if those uploads are absent on a new site. Migration 017 updates only the existing page’s two hero Image blocks; migration 018 is the latest complete About Us installer for a fresh deployment. Completed migration 016 remains unchanged. The desktop hero now targets 620–820px while expanding if the editable text requires room; the phone photo area uses 48vw.
 
 Current hero: assets/about-hero-v3/photo-about-eye-bank-desktop.jpg and photo-about-eye-bank-mobile.jpg. Migration 028 updates an existing page without replacing other content. The current About pattern and saved-layout template use these bundled photos.
+
+## Updated hero captions
+
+The desktop and mobile hero photographs now use the supplied caption updates, bundled under `assets/about-hero-v4/`. Source dimensions remain 1700×916 and 900×485; existing responsive sizing and bottom alignment are unchanged. Migration **038 — About Us hero captions** replaces only the two image paths and preserves other page content. The reusable About pattern uses the same new assets.
