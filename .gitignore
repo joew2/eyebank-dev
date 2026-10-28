@@ -4,6 +4,7 @@
 !/.gitattributes
 !/README.md
 !/deliverables/
+!/eyecanseeagain_static_site/
 !/wp-content/
 /wp-content/*
 !/wp-content/themes/

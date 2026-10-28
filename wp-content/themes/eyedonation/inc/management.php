@@ -4,6 +4,7 @@ add_action('admin_menu',function(){ add_theme_page('EyeDonation Site Management'
  if(!current_user_can('edit_theme_options')) return;
  echo '<div class="wrap"><h1>EyeDonation Site Management</h1><p>Use the native editors to manage shared design. Page content is edited under Pages.</p><ul>';
  foreach(['Header'=>'/wp_template_part/eyedonation//header','Footer'=>'/wp_template_part/eyedonation//footer','Navigation'=>'/navigation','Templates'=>'/wp_template','Global styles'=>'/styles'] as $label=>$path) echo '<li><a href="'.esc_url(add_query_arg('path',$path,admin_url('site-editor.php'))).'">'.esc_html($label).'</a></li>';
+ echo '<li><a href="'.esc_url(add_query_arg(['p'=>'/wp_template_part/eyedonation//member-menu','canvas'=>'edit'],admin_url('site-editor.php'))).'">Member Menu</a></li>';
  echo '</ul><p>Deployment setup: Tools → Site Migrations. Activation never replaces content.</p></div>';
  }); });
 

@@ -100,3 +100,16 @@
 /* Final tighter support crops retain the full supplied image and bottom caption. */
 .ed-support-full-photo>.ed-support-photo-crop-v2 img{aspect-ratio:1700/1003}
 @media(max-width:781px){.ed-support-full-photo>.ed-support-photo-crop-v2 img{aspect-ratio:900/531}}
+
+/* Publication dates beneath news-card titles, including dynamically loaded cards. */
+.ed-news .ed-news-date{display:block;font-family:Arial,Helvetica,sans-serif;font-size:12px;font-style:italic;font-weight:400;line-height:1.4;color:#727272;margin:0 0 10px}
+
+/* About Donation article photos retain their original color on hover. */
+.ed-about-donation .ed-news .wp-block-post-featured-image a::after{display:none}
+/* Four preview lines on desktop, three on phones; keep Read more visible. */
+.ed-news .ed-news-intro p{height:5.6em;overflow:hidden;line-height:1.4;font-size:15px}
+.ed-news .ed-news-preview-copy{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;height:4.2em;overflow:hidden}
+.ed-news .ed-news-intro .ed-news-read-more{display:block;font-size:15px;line-height:1.4}
+.ed-news .ed-preview-fitted .ed-news-preview-copy,.ed-news .ed-preview-fitted .ed-news-read-more{display:inline;height:auto;-webkit-line-clamp:unset}
+.ed-news-archive .ed-news-load-status{position:absolute;width:1px;height:1px;min-height:0;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+@media(max-width:600px){.ed-news .ed-news-intro p{height:4.2em}.ed-news .ed-news-preview-copy{height:2.8em;-webkit-line-clamp:2}}

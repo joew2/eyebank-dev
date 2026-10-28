@@ -1,0 +1,246 @@
+[
+  {
+    "src": "assets/portraits/1.jpg",
+    "name": "Adam"
+  },
+  {
+    "src": "assets/portraits/2.jpg",
+    "name": "Alice"
+  },
+  {
+    "src": "assets/portraits/3.jpg",
+    "name": "Alicia"
+  },
+  {
+    "src": "assets/portraits/4.jpg",
+    "name": "Allison"
+  },
+  {
+    "src": "assets/portraits/5.jpg",
+    "name": "Althea"
+  },
+  {
+    "src": "assets/portraits/6.jpg",
+    "name": "Alyssa"
+  },
+  {
+    "src": "assets/portraits/7.jpg",
+    "name": "Ana Maritza"
+  },
+  {
+    "src": "assets/portraits/8.jpg",
+    "name": "Andre"
+  },
+  {
+    "src": "assets/portraits/9.jpg",
+    "name": "Angelica"
+  },
+  {
+    "src": "assets/portraits/10.jpg",
+    "name": "Anthony"
+  },
+  {
+    "src": "assets/portraits/11.jpg",
+    "name": "Annette"
+  },
+  {
+    "src": "assets/portraits/12.jpg",
+    "name": "Anyero"
+  },
+  {
+    "src": "assets/portraits/13.jpg",
+    "name": "Arlene"
+  },
+  {
+    "src": "assets/portraits/14.jpg",
+    "name": "Arthur"
+  },
+  {
+    "src": "assets/portraits/15.jpg",
+    "name": "Bela"
+  },
+  {
+    "src": "assets/portraits/17.jpg",
+    "name": "Christine"
+  },
+  {
+    "src": "assets/portraits/18.jpg",
+    "name": "Cionsiris"
+  },
+  {
+    "src": "assets/portraits/19.jpg",
+    "name": "Cleopatra"
+  },
+  {
+    "src": "assets/portraits/20.jpg",
+    "name": "Dayvaun"
+  },
+  {
+    "src": "assets/portraits/21.jpg",
+    "name": "Deborah"
+  },
+  {
+    "src": "assets/portraits/22.jpg",
+    "name": "Denise"
+  },
+  {
+    "src": "assets/portraits/24.jpg",
+    "name": "Eduardo"
+  },
+  {
+    "src": "assets/portraits/25.jpg",
+    "name": "Martin"
+  },
+  {
+    "src": "assets/portraits/26.jpg",
+    "name": "Elena"
+  },
+  {
+    "src": "assets/portraits/27.jpg",
+    "name": "Ellen"
+  },
+  {
+    "src": "assets/portraits/28.jpg",
+    "name": "Erika"
+  },
+  {
+    "src": "assets/portraits/29.jpg",
+    "name": "Gillian"
+  },
+  {
+    "src": "assets/portraits/32.jpg",
+    "name": "Jamal"
+  },
+  {
+    "src": "assets/portraits/33.jpg",
+    "name": "James"
+  },
+  {
+    "src": "assets/portraits/34.jpg",
+    "name": "Janice"
+  },
+  {
+    "src": "assets/portraits/35.jpg",
+    "name": "Javier"
+  },
+  {
+    "src": "assets/portraits/36.jpg",
+    "name": "Jimmy"
+  },
+  {
+    "src": "assets/portraits/37.jpg",
+    "name": "John A."
+  },
+  {
+    "src": "assets/portraits/38.jpg",
+    "name": "John G."
+  },
+  {
+    "src": "assets/portraits/39.jpg",
+    "name": "John P."
+  },
+  {
+    "src": "assets/portraits/40.jpg",
+    "name": "Joseph"
+  },
+  {
+    "src": "assets/portraits/42.jpg",
+    "name": "Karen Hutton"
+  },
+  {
+    "src": "assets/portraits/43.jpg",
+    "name": "Kathleen"
+  },
+  {
+    "src": "assets/portraits/45.jpg",
+    "name": "Leonidas"
+  },
+  {
+    "src": "assets/portraits/46.jpg",
+    "name": "Lewis"
+  },
+  {
+    "src": "assets/portraits/47.jpg",
+    "name": "Lisa"
+  },
+  {
+    "src": "assets/portraits/48.jpg",
+    "name": "Lizbetty"
+  },
+  {
+    "src": "assets/portraits/49.jpg",
+    "name": "Louis"
+  },
+  {
+    "src": "assets/portraits/51.jpg",
+    "name": "Mary"
+  },
+  {
+    "src": "assets/portraits/52.jpg",
+    "name": "Max"
+  },
+  {
+    "src": "assets/portraits/53.jpg",
+    "name": "Melinda"
+  },
+  {
+    "src": "assets/portraits/54.jpg",
+    "name": "Michael"
+  },
+  {
+    "src": "assets/portraits/55.jpg",
+    "name": "Nancy"
+  },
+  {
+    "src": "assets/portraits/58.jpg",
+    "name": "Oscar"
+  },
+  {
+    "src": "assets/portraits/59.jpg",
+    "name": "Patricia"
+  },
+  {
+    "src": "assets/portraits/60.jpg",
+    "name": "Peter"
+  },
+  {
+    "src": "assets/portraits/61.jpg",
+    "name": "Regina"
+  },
+  {
+    "src": "assets/portraits/62.jpg",
+    "name": "Rob"
+  },
+  {
+    "src": "assets/portraits/63.jpg",
+    "name": "Ron"
+  },
+  {
+    "src": "assets/portraits/64.jpg",
+    "name": "Roslyn"
+  },
+  {
+    "src": "assets/portraits/65.jpg",
+    "name": "Shiu"
+  },
+  {
+    "src": "assets/portraits/66.jpg",
+    "name": "Stephen"
+  },
+  {
+    "src": "assets/portraits/67.jpg",
+    "name": "Theresa"
+  },
+  {
+    "src": "assets/portraits/68.jpg",
+    "name": "Tor Colvin"
+  },
+  {
+    "src": "assets/portraits/69.jpg",
+    "name": "Tyrone Caldwell"
+  },
+  {
+    "src": "assets/portraits/70.jpg",
+    "name": "Wendi"
+  }
+]
