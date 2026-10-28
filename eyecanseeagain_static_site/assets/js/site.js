@@ -6,7 +6,6 @@
   const notice = document.getElementById('link-notice');
   const dialog = document.getElementById('video-dialog');
   const player = document.getElementById('video-player');
-  const fallback = document.getElementById('video-fallback');
   let lastTrigger = null;
   let closeTimer;
   function openDialog(target, trigger) {
@@ -64,7 +63,7 @@
       const embed = video && vimeoEmbed(video.url);
       const title = video?.title || 'Story video';
       document.getElementById('video-dialog-title').textContent = title;
-      player.replaceChildren(); fallback.replaceChildren();
+      player.replaceChildren();
       if (embed) {
         const iframe = document.createElement('iframe');
         iframe.title = title;
@@ -73,14 +72,10 @@
         iframe.referrerPolicy = 'strict-origin-when-cross-origin';
         iframe.src = embed;
         player.append(iframe);
-        const link = document.createElement('a');
-        link.href = video.url; link.target = '_blank'; link.rel = 'noopener noreferrer';
-        link.textContent = 'Watch on Vimeo';
-        fallback.append('If the video does not play, ', link, '.');
       } else {
         const message = document.createElement('p');
         message.className = 'pending-video';
-        message.textContent = 'Adam’s video will be available here soon. In the meantime, explore the other sight restoration stories below.';
+        message.textContent = 'This video is not available yet. Please explore the other sight restoration stories.';
         player.append(message);
       }
       openDialog(dialog, trigger);
