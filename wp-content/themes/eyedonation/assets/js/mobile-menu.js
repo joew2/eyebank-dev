@@ -74,6 +74,7 @@
  if(menu)new MutationObserver(()=>{const isOpen=menu.classList.contains('is-menu-open');if(isOpen!==wasOpen){reset();wasOpen=isOpen;if(!isOpen){clearTimeout(closeTimer);closing=false;menu.classList.remove('ed-mobile-menu-closing');}}}).observe(menu,{attributes:true,attributeFilter:['class']});
  nav.addEventListener('keydown',event=>{
   if(!mobile.matches||event.key!=='Escape')return;
+  if(event.target.closest('.ed-header-search-control.is-open'))return;
   const entry=entries.find(entry=>entry.item.contains(event.target)&&entry.button.getAttribute('aria-expanded')==='true');
   if(entry){event.preventDefault();event.stopPropagation();entry.setOpen(false);entry.button.focus();}
   else if(menu?.classList.contains('is-menu-open')){event.preventDefault();event.stopPropagation();fadeClose();}

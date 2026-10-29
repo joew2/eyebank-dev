@@ -4,7 +4,7 @@ Open **Appearance → Member Menu** to edit the strip in the WordPress Site Edit
 
 The Member Menu template part contains the editable Member Access caption, navigation, and a dynamic Member welcome and logout block. That block displays the current user's first name (falling back to display name), initial, and WordPress's secure logout link. No personal information is stored in the template.
 
-The strip renders only for logged-in users, below the header on every theme template that uses the Header part. Guests receive no member menu markup. It scrolls with the page independently of the sticky header. Desktop uses a single row; smaller screens use a two-column grid beneath the greeting.
+The strip renders only for logged-in users, below the header on every theme template that uses the Header part. Guests receive no member menu markup. It scrolls with the page independently of the sticky header. Desktop uses a single row with matching light dividers between every menu destination and the existing outer dividers beside the caption/account. The desktop inner strip is centered at its natural content width, with 20px between each divider and adjacent item, including the caption and account areas. Smaller screens retain their two-column grid beneath the greeting.
 
 Icons are inline SVG code in `inc/member-menu.php`. Native navigation link Advanced CSS classes select each icon: `ed-member-profile`, `ed-member-downloads`, `ed-member-transplant`, and `ed-member-research`. Retain these classes when editing existing links.
 

@@ -114,37 +114,29 @@
 .ed-news-archive .ed-news-load-status{position:absolute;width:1px;height:1px;min-height:0;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 @media(max-width:600px){.ed-news .ed-news-intro p{height:4.2em}.ed-news .ed-news-preview-copy{height:2.8em;-webkit-line-clamp:2}}
 
-/* Center the primary menu and search with a consistent desktop item gap. */
+/* Match visible menu gaps; subtract the magnifier’s 11.64px inset inside its button. */
 @media(min-width:1025px){
- .ed-nav{padding-inline:clamp(24px,5vw,70px);column-gap:50px}
+ .ed-nav{--ed-primary-gap:60px;padding-inline:clamp(24px,5vw,70px);column-gap:calc(var(--ed-primary-gap) - 11.64px)}
  .ed-nav nav.ed-primary-navigation{min-width:0;flex:0 1 auto;max-width:none!important}
  .ed-nav nav.ed-primary-navigation .wp-block-navigation__responsive-container,
  .ed-nav nav.ed-primary-navigation .wp-block-navigation__responsive-container-content{width:100%}
- .ed-nav nav.ed-primary-navigation .wp-block-navigation__container{width:auto;flex-wrap:nowrap;justify-content:center;gap:50px}
+ .ed-nav nav.ed-primary-navigation .wp-block-navigation__container{width:auto;flex-wrap:nowrap;justify-content:center;gap:var(--ed-primary-gap)}
  .ed-nav nav.ed-primary-navigation .wp-block-navigation__container>.wp-block-navigation-item{margin-inline:0;padding-inline:0;flex-shrink:0}
  .ed-nav nav.ed-primary-navigation .wp-block-navigation__container>.wp-block-navigation-item>.wp-block-navigation-item__content{white-space:nowrap}
  .ed-nav nav.ed-primary-navigation .wp-block-navigation__container>.wp-block-navigation-item:last-child>.wp-block-navigation__submenu-container{left:auto;right:0}
  .ed-nav>.ed-header-search-control{margin-inline-start:0!important}
 }
-@media(min-width:1251px) and (max-width:1299px){
- .ed-nav{column-gap:clamp(20px,3vw,50px)}
- .ed-nav nav.ed-primary-navigation .wp-block-navigation__container{gap:clamp(20px,calc((100vw - 1100px)*.1 + 8px),50px)}
+@media(min-width:1251px) and (max-width:1439px){
+ .ed-nav{--ed-primary-gap:clamp(32px,calc((100vw - 1250px)*.148 + 32px),60px)}
+ .ed-nav nav.ed-primary-navigation .wp-block-navigation__container{gap:var(--ed-primary-gap)}
 }
 @media(min-width:1025px) and (max-width:1250px){
- .ed-nav{column-gap:24px}
- .ed-nav nav.ed-primary-navigation .wp-block-navigation__container{gap:8px}
+ .ed-nav{--ed-primary-gap:32px;padding-inline:24px}
+ .ed-nav nav.ed-primary-navigation .wp-block-navigation__container{gap:var(--ed-primary-gap)}
  .ed-nav nav.ed-primary-navigation .wp-block-navigation__container>.wp-block-navigation-item{padding-inline:0}
  .ed-nav nav.ed-primary-navigation .wp-block-navigation__container>.wp-block-navigation-item>.wp-block-navigation-item__content{font-size:14px}
 }
-/* The collapsed search has no offscreen footprint; opening reserves its full field width. */
+/* Extend the dark hover panel without moving the labels or changing their gaps. */
 @media(min-width:1025px){
- .ed-nav>.ed-header-search-control:not(.is-open) .ed-header-search{width:calc(clamp(24px,5vw,70px) - 8px)}
- .ed-nav:has(>.ed-header-search-control.is-open){padding-inline-end:198px}
+ .ed-nav nav.ed-primary-navigation .wp-block-navigation__container>.wp-block-navigation-item{padding-inline:12px!important;margin-inline:-12px!important}
 }
-@media(min-width:1025px) and (max-width:1300px){
- .ed-nav:has(>.ed-header-search-control.is-open) nav.ed-primary-navigation .wp-block-navigation__container{gap:2px}
- .ed-nav:has(>.ed-header-search-control.is-open) nav.ed-primary-navigation .wp-block-navigation__container>.wp-block-navigation-item{padding-inline:0}
- .ed-nav:has(>.ed-header-search-control.is-open) nav.ed-primary-navigation .wp-block-navigation__container>.wp-block-navigation-item>.wp-block-navigation-item__content{font-size:14px}
-}
-
-@media(min-width:1301px) and (max-width:1500px){.ed-nav:has(>.ed-header-search-control.is-open) nav.ed-primary-navigation .wp-block-navigation__container{gap:20px}}
