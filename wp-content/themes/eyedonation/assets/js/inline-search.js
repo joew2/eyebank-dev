@@ -9,7 +9,7 @@
  form.before(control);control.append(toggle,form);form.inert=true;form.setAttribute('aria-hidden','true');
  const size=()=>{const available=Math.max(1,innerWidth-toggle.getBoundingClientRect().right-24);control.style.setProperty('--ed-inline-search-width',`${Math.min(170,available)}px`);};
  const close=returnFocus=>{control.classList.remove('is-open');toggle.setAttribute('aria-expanded','false');form.inert=true;form.setAttribute('aria-hidden','true');if(returnFocus)toggle.focus();};
- toggle.addEventListener('click',()=>{if(control.classList.contains('is-open')){close(true);return;}size();form.inert=false;form.removeAttribute('aria-hidden');control.classList.add('is-open');toggle.setAttribute('aria-expanded','true');setTimeout(()=>{if(control.classList.contains('is-open'))field.focus({preventScroll:true});},matchMedia('(prefers-reduced-motion: reduce)').matches?0:210);});
+ toggle.addEventListener('click',()=>{if(control.classList.contains('is-open')){close(true);return;}form.inert=false;form.removeAttribute('aria-hidden');control.classList.add('is-open');size();toggle.setAttribute('aria-expanded','true');setTimeout(()=>{if(control.classList.contains('is-open'))field.focus({preventScroll:true});},matchMedia('(prefers-reduced-motion: reduce)').matches?0:210);});
  control.addEventListener('keydown',event=>{if(event.key==='Escape'&&control.classList.contains('is-open')){event.preventDefault();event.stopPropagation();close(true);}});
  document.addEventListener('pointerdown',event=>{if(!control.contains(event.target))close(false);});
  control.addEventListener('focusout',()=>{queueMicrotask(()=>{if(!control.contains(document.activeElement))close(false);});});
