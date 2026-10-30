@@ -30,3 +30,7 @@ A configurable tablet/phone override fixes the widget 5px from the viewport bott
 Added the `viewport-bottom` placement and bounded 0–100px bottom-gap setting. Current local settings were backed up and changed to bottom-right viewport placement with a 5px gap; enabled state, existing top offset, remembered preferences and mobile override were preserved. Sanitization checks rejected an invalid placement/side and clamped negative/excessive offsets.
 
 The `tests/viewport-bottom.cjs` browser check passed at 1440, 1920, 1024 and 390px: both icons retain exact bottom/right gaps during scrolling, accessibility and language panels fit the viewport, left-side placement and a 37px bottom gap work, and disabling the mobile override applies the configured placement on phones. Existing top-of-viewport and document-relative footer modes passed regression checks. PHP lint, JavaScript syntax, ZIP integrity and `git diff --check` passed.
+
+- 1.4.0: Focus highlight defaults off with existing saved preferences; enabling adds the enhanced outline, persists after reload, resets to off, preserves keyboard-focus indicators, and works when browser storage is unavailable.
+
+- 1.4.1: Real homepage resource/donor panels and About history cards have no mouse-focus wrapper outline with the feature off; enabling/disabling the feature updates the wrapper outline, while keyboard focus remains visible.

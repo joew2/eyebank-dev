@@ -34,3 +34,11 @@ Run `php tests/integration.php /absolute/path/to/wp-load.php` against a developm
 ## Tablet and phone placement
 
 ATP includes **Tablets and phones: fix widget to the bottom-right corner**, enabled by default. At viewport widths of 1024px or less it overrides the normal placement and anchors the widget 5px from the bottom and right edges. Menus open upward. Wider screens retain the configured footer/screen placement and side. Disable the checkbox to use the normal placement at every width. Changes in orientation/viewport width automatically update placement without reloading.
+
+## 1.4.0 — Optional focus highlight
+
+The accessibility panel now includes **Focus highlight** (Spanish: **Resaltar el foco**). It starts off for new and existing visitors unless they explicitly save it as enabled. When enabled, it adds a cyan outline around focused links, buttons, and form controls. Reset switches it off. When Remember visitor preferences is enabled, the visitor’s choice persists on that device. The plugin no longer applies its extra site-wide outline automatically. Native/theme keyboard-focus styles and the toolbar’s keyboard indicators remain intact. No database settings migration is needed.
+
+## 1.4.1 — Theme card focus compatibility
+
+Suppresses legacy Eye-Bank card and donor-panel `focus-within` outlines on mouse clicks when Focus highlight is off. Keyboard-focus indicators remain visible. The matching theme styles now apply these wrapper outlines only for keyboard focus or an explicitly enabled Focus highlight preference.

@@ -59,3 +59,6 @@ require DIR.'/migrations/040_update_homepage_support_photo.php';
 require DIR.'/migrations/041_update_homepage_support_responsive.php';
 require DIR.'/migrations/042_update_homepage_support_crop.php';
 require DIR.'/migrations/043_install_member_menu.php';
+
+require DIR.'/migrations/044_install_for_physicians.php';
+require DIR.'/migrations/045_install_medical_advisory_board.php';

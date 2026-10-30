@@ -323,6 +323,34 @@
       "postTypes": [
         "page"
       ]
+    },
+    {
+      "name": "for-physicians",
+      "title": "For Physicians \u2014 Editable Page",
+      "postTypes": [
+        "page"
+      ]
+    },
+    {
+      "name": "for-physicians-layout",
+      "title": "For Physicians \u2014 Backup Layout",
+      "postTypes": [
+        "page"
+      ]
+    },
+    {
+      "name": "medical-advisory-board",
+      "title": "Medical Advisory Board \u2014 Editable Page",
+      "postTypes": [
+        "page"
+      ]
+    },
+    {
+      "name": "medical-advisory-board-layout",
+      "title": "Medical Advisory Board \u2014 Backup Layout",
+      "postTypes": [
+        "page"
+      ]
     }
   ],
   "templateParts": [

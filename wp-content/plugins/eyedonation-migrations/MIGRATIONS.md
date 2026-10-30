@@ -41,3 +41,11 @@ Hero v2 update: laptop viewports from 601px through 1275px use a 500px hero; lar
 Persistent donor signup panel: the native editable callout now uses the mockup’s pale background, rounded left corners, blue regular text and right arrow. Its full-card link is https://donatelife.ny.gov/ref/EBSRlink/. The theme fixes it flush to the right viewport edge at 65% of viewport height on desktop, and near the bottom on mobile. The interface moves the panel outside hero stacking/clipping contexts so it remains visible over subsequent sections. Native logo/text blocks remain accessible in the page editor. Saved complete and Hero patterns include the panel.
 
 Migration 013 updates only the existing donor panel and preserves the rest of the page. Fresh full homepage installations should use 014 instead of historical 010/012; it includes both the revised hero photo and donor panel. Earlier completed payloads and helper files remain unchanged.
+
+## 044 — For Physicians
+
+Converts `/for-physicians/` to editable native blocks and assigns the For Physicians template. Preserves the Toolset login shortcode and its remember-me settings, guest reset/registration links, and member tissue-request choices. Internal links are relative. Includes the reusable theme pattern and backup layout. Toolset Views login shortcode must be available. Preview before installation; backup and replacement acknowledgment required. Repeated runs preserve editorial changes. Exclude this authentication page from external page caches.
+
+## 045 — Medical Advisory Board
+
+Converts `/medical-advisory-board/` to editable blocks using the shared board styles. Includes the bundled original banner, five preserved Toolset Views shortcodes, reusable pattern and backup template. Requires Toolset Views; destination must retain its existing MAB view definitions and people/media records. Preview and backup required; subsequent editorial changes are preserved on repeat runs.

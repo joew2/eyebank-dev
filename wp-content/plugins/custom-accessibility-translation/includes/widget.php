@@ -52,6 +52,7 @@ function cwsatp_settings_form() {
     echo '<p><label>Bottom gap (pixels, bottom-of-viewport mode only) <input type="number" min="0" max="100" name="cwsatp_settings[bottom_offset]" value="'.esc_attr($s['bottom_offset']).'"></label></p><p class="description">Bottom placement opens the accessibility panel and language list upward. The side gap is 5px.</p>';
     echo '<h2>Tablets and phones</h2><p><label><input type="checkbox" name="cwsatp_settings[mobile_bottom]" value="1" '.checked($s['mobile_bottom'],1,false).'> Use the bottom-right viewport corner on tablets and phones</label></p><p class="description">At widths of 1024px or less, this overrides the desktop settings with a 5px gap from the bottom and right edges. Turn it off to use the desktop placement and gaps on all screen sizes.</p>';
     echo '<h2>Visitor preferences</h2><p><label><input type="checkbox" name="cwsatp_settings[remember]" value="1" '.checked($s['remember'],1,false).'> Remember visitor preferences on this device</label></p>';
+    echo '<p class="description">Focus highlight is an optional visitor control, off by default. It adds an enhanced outline only after a visitor enables it in the accessibility panel. Standard browser and theme keyboard-focus indicators remain available.</p>';
     submit_button('Save Widget Settings');
     echo '</form><p>Language switching appears only for enabled page pairs below. Unmapped pages never link to an unrelated translation. These links open your existing translated pages; they do not translate content automatically.</p></div>';
 }
@@ -73,15 +74,15 @@ add_action('wp_enqueue_scripts', function () {
 add_action('wp_footer', function () {
     $s = cwsatp_settings(); if (!$s['enabled']) return;
     $pair = cwsatp_language_pair(); $spanish = $pair && $pair['current'] === 'es';
-    $labels = $spanish ? ['Accesibilidad','Cerrar','Aumentar texto','Reducir texto','Alto contraste','Escala de grises','Subrayar enlaces','Fuente legible','Restablecer','Idioma'] : ['Accessibility','Close','Increase text','Decrease text','High contrast','Grayscale','Underline links','Readable font','Reset','Language'];
+    $labels = $spanish ? ['Accesibilidad','Cerrar','Aumentar texto','Reducir texto','Alto contraste','Escala de grises','Subrayar enlaces','Fuente legible','Restablecer','Idioma','Resaltar el foco'] : ['Accessibility','Close','Increase text','Decrease text','High contrast','Grayscale','Underline links','Readable font','Reset','Language','Focus highlight'];
     ?>
     <aside id="cwsatp-widget" class="cwsatp-side-<?php echo esc_attr($s['side']); ?>" style="--cwsatp-top:<?php echo absint($s['offset']); ?>px;--cwsatp-bottom:<?php echo absint($s['bottom_offset']); ?>px" data-mobile-bottom="<?php echo absint($s['mobile_bottom']); ?>" data-placement="<?php echo esc_attr($s['placement']); ?>" data-remember="<?php echo absint($s['remember']); ?>" aria-label="<?php echo esc_attr($labels[0].' / '.$labels[9]); ?>">
       <button class="cwsatp-trigger" type="button" aria-expanded="false" aria-controls="cwsatp-panel" aria-label="<?php echo esc_attr($labels[0]); ?>"><svg viewBox="0 0 32 40" aria-hidden="true" focusable="false"><circle cx="14" cy="5" r="4" fill="currentColor"/><path d="M13 12v12h13l4 10M14 18h10M10 17a11 11 0 1 0 12 18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
       <section id="cwsatp-panel" hidden aria-labelledby="cwsatp-title">
         <div class="cwsatp-panel-heading"><h2 id="cwsatp-title"><?php echo esc_html($labels[0]); ?></h2><button type="button" class="cwsatp-close" aria-label="<?php echo esc_attr($labels[1]); ?>">×</button></div>
         <div class="cwsatp-controls">
-        <?php foreach (['increase'=>2,'decrease'=>3,'contrast'=>4,'grayscale'=>5,'links'=>6,'font'=>7,'reset'=>8] as $action=>$index): ?>
-          <button type="button" data-action="<?php echo esc_attr($action); ?>" <?php if(in_array($action,['contrast','grayscale','links','font'],true)) echo 'aria-pressed="false"'; ?>><?php echo esc_html($labels[$index]); ?></button>
+        <?php foreach (['increase'=>2,'decrease'=>3,'contrast'=>4,'grayscale'=>5,'links'=>6,'font'=>7,'focus'=>10,'reset'=>8] as $action=>$index): ?>
+          <button type="button" data-action="<?php echo esc_attr($action); ?>" <?php if(in_array($action,['contrast','grayscale','links','font','focus'],true)) echo 'aria-pressed="false"'; ?>><?php echo esc_html($labels[$index]); ?></button>
         <?php endforeach; ?>
         </div><output class="cwsatp-status" aria-live="polite"></output>
       </section>

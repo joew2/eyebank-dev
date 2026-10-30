@@ -28,7 +28,7 @@
   const languages = widget.querySelector('#cwsatp-languages');
   const status = widget.querySelector('.cwsatp-status');
   const key = 'cwsatp-preferences-v1';
-  const defaults = () => ({ size: 0, contrast: false, grayscale: false, links: false, font: false });
+  const defaults = () => ({ size: 0, contrast: false, grayscale: false, links: false, font: false, focus: false });
   let state = defaults();
   const originals = new Map();
   const excluded = el => el.closest('#cwsatp-widget, #wpadminbar, dialog, [role="dialog"], script, style, .screen-reader-text');
@@ -54,7 +54,7 @@
     });
   };
   const apply = (announce = true) => {
-    ['contrast', 'grayscale', 'links', 'font'].forEach(action => {
+    ['contrast', 'grayscale', 'links', 'font', 'focus'].forEach(action => {
       document.body.classList.toggle(`cwsatp-${action}`, state[action]);
       widget.querySelector(`[data-action="${action}"]`).setAttribute('aria-pressed', String(state[action]));
     });
@@ -71,7 +71,7 @@
       const saved = JSON.parse(localStorage.getItem(key));
       if (saved && typeof saved === 'object') {
         state.size = Number.isInteger(saved.size) ? Math.max(0, Math.min(5, saved.size)) : 0;
-        ['contrast','grayscale','links','font'].forEach(action => state[action] = saved[action] === true);
+        ['contrast','grayscale','links','font','focus'].forEach(action => state[action] = saved[action] === true);
       }
     } else localStorage.removeItem(key);
   } catch (_) { /* Ignore malformed or unavailable storage. */ }
