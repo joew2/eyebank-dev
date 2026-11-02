@@ -2,14 +2,16 @@
 /**
  * Plugin Name: EyeDonation Search
  * Description: Public derived-text indexing and accessible grouped search. Independent of site migrations.
- * Version: 0.1.0
+ * Version: 0.1.1
  * Requires PHP: 8.1
  * Requires at least: 6.6
  * Text Domain: eyedonation-search
  */
 namespace EyeDonation\Search;
 defined('ABSPATH') || exit;
+// Keep the migration API version compatible with existing deployment preflights.
 const VERSION='0.1.0';
+const PLUGIN_VERSION='0.1.1';
 require __DIR__.'/src/Search.php';
 require __DIR__.'/src/Admin.php';
 register_activation_hook(__FILE__,__NAMESPACE__.'\\request_rebuild');

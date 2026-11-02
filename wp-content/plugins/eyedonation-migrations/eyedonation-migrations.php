@@ -62,3 +62,21 @@ require DIR.'/migrations/043_install_member_menu.php';
 
 require DIR.'/migrations/044_install_for_physicians.php';
 require DIR.'/migrations/045_install_medical_advisory_board.php';
+
+require DIR.'/migrations/support/EditablePages.php';
+require DIR.'/migrations/046_install_responsibilities_and_benefits.php';
+require DIR.'/migrations/047_install_privacy_policy.php';
+require DIR.'/migrations/048_install_young_ambassador_scholarship_criteria.php';
+require DIR.'/migrations/049_install_stem_scholarship.php';
+require DIR.'/migrations/050_install_medal.php';
+require DIR.'/migrations/051_install_registration_tissue_request.php';
+require DIR.'/migrations/052_install_member_profile.php';
+require DIR.'/migrations/053_install_enter_new_password.php';
+require DIR.'/migrations/054_install_user_downloads.php';
+require DIR.'/migrations/055_install_transplant_surgery.php';
+require DIR.'/migrations/056_install_thank_you_your_submission_has_been_sent.php';
+require DIR.'/migrations/057_install_other_give_now.php';
+
+// Admin presentation only; leaves released migration checksums and page payloads unchanged.
+require DIR.'/admin-layout.php';
+require DIR.'/bulk-admin.php';

@@ -1,0 +1,107 @@
+[
+  {
+    "number": 46,
+    "slug": "responsibilities-and-benefits",
+    "title": "Responsibilities and Benefits",
+    "kind": "content",
+    "dependencies": []
+  },
+  {
+    "number": 47,
+    "slug": "privacy-policy",
+    "title": "Privacy Policy",
+    "kind": "content",
+    "dependencies": []
+  },
+  {
+    "number": 48,
+    "slug": "young-ambassador-scholarship-criteria",
+    "title": "Young Ambassador Scholarship Criteria",
+    "kind": "scholarship",
+    "dependencies": [
+      "wpv-view",
+      "scholarship-winners"
+    ]
+  },
+  {
+    "number": 49,
+    "slug": "stem-scholarship",
+    "title": "STEM Scholarship",
+    "kind": "scholarship",
+    "dependencies": [
+      "wpv-view",
+      "stem-scholarship-winners"
+    ]
+  },
+  {
+    "number": 50,
+    "slug": "medal",
+    "title": "Gift of Life Donor Medal",
+    "kind": "form",
+    "dependencies": [
+      "gravityform",
+      35
+    ]
+  },
+  {
+    "number": 51,
+    "slug": "registration-tissue-request",
+    "title": "Tissue Request Registration",
+    "kind": "account",
+    "dependencies": [
+      "cred_user_form",
+      "request-tissue-registration"
+    ]
+  },
+  {
+    "number": 52,
+    "slug": "member-profile",
+    "title": "Member Profile",
+    "kind": "account",
+    "dependencies": [
+      "cred_user_form",
+      "user-profile",
+      "wpv-login-form"
+    ]
+  },
+  {
+    "number": 53,
+    "slug": "enter-new-password",
+    "title": "Enter New Password",
+    "kind": "account",
+    "dependencies": [
+      "wpv-reset-password-form"
+    ]
+  },
+  {
+    "number": 54,
+    "slug": "user-downloads",
+    "title": "User Downloads",
+    "kind": "account",
+    "dependencies": [
+      "filemanager",
+      "wpv-login-form"
+    ]
+  },
+  {
+    "number": 55,
+    "slug": "transplant-surgery",
+    "title": "Transplant Surgery",
+    "kind": "surgery",
+    "dependencies": []
+  },
+  {
+    "number": 56,
+    "slug": "thank-you-your-submission-has-been-sent",
+    "title": "Request Sent Confirmation",
+    "kind": "confirmation",
+    "dependencies": []
+  },
+  {
+    "number": 57,
+    "slug": "other-give-now",
+    "title": "Other Ways to Give",
+    "kind": "give",
+    "dependencies": []
+  }
+]

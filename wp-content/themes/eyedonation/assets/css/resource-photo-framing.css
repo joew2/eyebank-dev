@@ -1,0 +1,17 @@
+/* Keep the original framing as a fallback in older browsers. */
+@supports (container-type:size) and (width:1cqw){
+/* Only the Transplant Recipients & Donor Families resource card. */
+.home .ed-resource-card:has(a[href*="/transplant-recipients-donor-families"]){container-type:size;padding:0;--cws-photo-down:0px}
+.home .ed-resource-card:has(a[href*="/transplant-recipients-donor-families"])>.wp-block-cover__inner-container{box-sizing:border-box;padding:16px}
+.home .ed-resource-card:has(a[href*="/transplant-recipients-donor-families"])>img.wp-block-cover__image-background{
+ --cws-photo-width:max(105cqw,calc(105cqh * 900 / 781));
+ --cws-photo-height:max(105cqh,calc(105cqw * 781 / 900));
+ /* Move right 30px, capped at the photograph edges and the man's left hairline. */
+ --cws-photo-left:clamp(calc(100cqw - var(--cws-photo-width)),max(calc((100cqw - var(--cws-photo-width)) / 2 + 30px),calc(4px - var(--cws-photo-width) * 184 / 900)),0px);
+ /* Keep at least 4px above the man's hairline instead of cropping his head. */
+ --cws-photo-top:clamp(calc(100cqh - var(--cws-photo-height)),max(calc((100cqh - var(--cws-photo-height)) / 2 + var(--cws-photo-down)),calc(4px - var(--cws-photo-height) * 24 / 781)),0px);
+ position:absolute!important;left:var(--cws-photo-left)!important;top:var(--cws-photo-top)!important;right:auto!important;bottom:auto!important;
+ width:var(--cws-photo-width)!important;height:var(--cws-photo-height)!important;max-width:none!important;object-fit:fill!important;object-position:initial!important;transform-origin:top left;
+}
+@media(max-width:781px){.home .ed-resource-card:has(a[href*="/transplant-recipients-donor-families"]){--cws-photo-down:20px}}
+}

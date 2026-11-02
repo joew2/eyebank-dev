@@ -1,0 +1,13 @@
+# Other Ways to Give
+
+`/other-give-now/` now uses **Other Ways to Give — Editable Page**. Its hero, photos, donation link, copy, four accordion sections, ordered instructions, social links, mail-in donation form link and report section are native editable blocks. **Other Ways to Give — Backup Layout** renders the reusable `eyedonation/other-give-now` pattern.
+
+The supplied copy is retained. Cleanup removes inline page CSS/JavaScript, nested buttons inside links, duplicate accordion IDs, the old header-search override and Font Awesome dependency. The malformed Karen Bardavid contact link is corrected to `mailto:kbardavid@ebsr.org`. Internal links point to `/news-and-events/`, `/legacy/` and `/financial-reports/`. The supplied Blackbaud donation and social-fundraising URLs are preserved. The shared site footer supplies social/contact details instead of repeating the old footer shortcode.
+
+Native Details blocks reuse the site's FAQ accordion styles and animation. Only one section opens at a time; keyboard controls, reduced-motion preference and operation without JavaScript are supported. No Bootstrap, Google Fonts or separate accordion library is added. Page-specific styles are scoped to `.ed-give-page` and use pixel typography and current theme colors. The donation hero and pale-blue reports background span the full page width; the accordion, main copy and reports text retain the shared 1,050px content width. Images have no hover tint, and buttons do not move on hover.
+
+All twelve referenced images/documents, including the mail-in `Contribution_Form.pdf`, are bundled in `assets/page-conversions/`. Image and PDF URLs resolve through the active theme; no media-library attachments are required for this layout.
+
+Migration **057** under **Tools → EyeDonation Migrations** previews and replaces only `/other-give-now/`, retaining its ID/URL and existing builder data. It saves the prior page content/template and builder flags in its history and `edm_selected_other-give-now_backup`, checks for edits since preview, resumes interrupted runs and preserves later editorial changes on repeat runs. Upload the matching theme and migration plugin ZIPs together. Use a recoverable database backup before production installation.
+
+Verification: WordPress's editor parser accepted the page with no invalid blocks. Chrome checks passed at 1440, 768, 390 and 320px, with no horizontal overflow. All four panels, keyboard open/close, single-open behavior and no-JavaScript fallback passed. Panel images and the bundled PDF loaded successfully. All supplied visible copy was compared with the generated content. Repeat-run migration and unchanged-neighbor checks passed. No donation or external fundraising action was submitted.

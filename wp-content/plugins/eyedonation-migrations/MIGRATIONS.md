@@ -49,3 +49,13 @@ Converts `/for-physicians/` to editable native blocks and assigns the For Physic
 ## 045 — Medical Advisory Board
 
 Converts `/medical-advisory-board/` to editable blocks using the shared board styles. Includes the bundled original banner, five preserved Toolset Views shortcodes, reusable pattern and backup template. Requires Toolset Views; destination must retain its existing MAB view definitions and people/media records. Preview and backup required; subsequent editorial changes are preserved on repeat runs.
+
+## 046–056 — Selected information and member pages
+
+Individual preview/install migrations for Responsibilities and Benefits (046), Privacy Policy (047), Young Ambassador Scholarship Criteria (048), STEM Scholarship (049), Gift of Life Donor Medal (050), Tissue Request Registration (051), Member Profile (052), Enter New Password (053), User Downloads (054), Transplant Surgery (055), and Request Sent Confirmation (056). No other pages are changed.
+
+Includes native editable content, matching templates and reusable backup patterns. Preserves Toolset Views/Forms, Gravity Form 35 and the file-manager shortcode. Requires their existing definitions and data on the destination. Restores the original surgery sidebar from the approved source snapshot; leaves original custom fields intact. Each migration records a per-page backup, checks preview conflicts, resumes interrupted fields and preserves editorial changes on repeat runs. See the theme's `docs/SELECTED-PAGE-CONVERSIONS.md` for dependencies, cache exclusions and verification.
+
+## 057 — Other Ways to Give
+
+Replaces only `/other-give-now/` using the supplied approved copy in native blocks: two-column donation hero, four native Details accordions, mail-in donation and reports section. Bundles twelve referenced images/documents, including the contribution PDF. Reuses the FAQ accordion behavior and shared page styles. Corrects the malformed email link and localizes internal destinations. Includes editable/backup templates and a reusable pattern. Uses the existing preview/resume runner with per-page backup, conflict detection and repeat-run preservation. See `docs/OTHER-WAYS-TO-GIVE.md` in the theme.

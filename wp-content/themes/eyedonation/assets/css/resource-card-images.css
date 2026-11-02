@@ -1,0 +1,15 @@
+/* Supplied desktop/mobile crops: use their proportions without additional zoom or offsets. */
+.home .ed-resource-card.cws-resource-images-v2{position:relative;display:flex;flex-direction:column;justify-content:flex-end;box-sizing:border-box;width:100%;height:auto;min-height:0!important;aspect-ratio:670/840;padding:16px!important;container-type:normal!important;overflow:hidden;isolation:isolate}
+.home .cws-resource-images-v2>.cws-resource-picture{position:absolute;inset:0;display:block;margin:0;z-index:0}
+.home .cws-resource-images-v2 .cws-resource-image{display:block;width:100%!important;height:100%!important;max-width:100%!important;object-fit:contain!important;object-position:center!important;transform:none!important;scale:1!important}
+.home .cws-resource-images-v2>.wp-block-heading{position:static;z-index:2;width:100%;margin:0}
+
+/* Match the other Resources cards: 3.5% image zoom on hover or keyboard focus. */
+.home .ed-resource-card.cws-resource-images-v2 .cws-resource-image{transition:transform .3s ease;transform-origin:center}
+.home .ed-resource-card.cws-resource-images-v2:hover .cws-resource-image,
+.home .ed-resource-card.cws-resource-images-v2:focus-within .cws-resource-image{transform:scale(1.035)!important}
+@media(prefers-reduced-motion:reduce){
+ .home .ed-resource-card.cws-resource-images-v2 .cws-resource-image{transition:none}
+ .home .ed-resource-card.cws-resource-images-v2:hover .cws-resource-image,
+ .home .ed-resource-card.cws-resource-images-v2:focus-within .cws-resource-image{transform:none!important}
+}

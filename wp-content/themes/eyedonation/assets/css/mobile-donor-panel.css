@@ -1,0 +1,4 @@
+/* Mobile donor card: scale the complete card to 80% and clear the child's face. */
+@media(max-width:1024px){
+ .home .ed-hero .ed-callout.ed-donor-panel{position:absolute!important;top:auto!important;left:auto!important;right:0!important;bottom:12px!important;display:grid!important;transform:scale(.8)!important;transform-origin:right bottom!important;scale:1!important}
+}

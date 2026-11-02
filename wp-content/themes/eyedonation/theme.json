@@ -351,6 +351,188 @@
       "postTypes": [
         "page"
       ]
+    },
+    {
+      "name": "responsibilities-and-benefits",
+      "title": "Responsibilities and Benefits \u2014 Editable Page",
+      "postTypes": [
+        "page"
+      ]
+    },
+    {
+      "name": "responsibilities-and-benefits-layout",
+      "title": "Responsibilities and Benefits \u2014 Backup Layout",
+      "postTypes": [
+        "page"
+      ]
+    },
+    {
+      "name": "privacy-policy",
+      "title": "Privacy Policy \u2014 Editable Page",
+      "postTypes": [
+        "page"
+      ]
+    },
+    {
+      "name": "privacy-policy-layout",
+      "title": "Privacy Policy \u2014 Backup Layout",
+      "postTypes": [
+        "page"
+      ]
+    },
+    {
+      "name": "young-ambassador-scholarship-criteria",
+      "title": "Young Ambassador Scholarship Criteria \u2014 Editable Page",
+      "postTypes": [
+        "page"
+      ]
+    },
+    {
+      "name": "young-ambassador-scholarship-criteria-layout",
+      "title": "Young Ambassador Scholarship Criteria \u2014 Backup Layout",
+      "postTypes": [
+        "page"
+      ]
+    },
+    {
+      "name": "stem-scholarship",
+      "title": "STEM Scholarship \u2014 Editable Page",
+      "postTypes": [
+        "page"
+      ]
+    },
+    {
+      "name": "stem-scholarship-layout",
+      "title": "STEM Scholarship \u2014 Backup Layout",
+      "postTypes": [
+        "page"
+      ]
+    },
+    {
+      "name": "medal",
+      "title": "Gift of Life Donor Medal \u2014 Editable Page",
+      "postTypes": [
+        "page"
+      ]
+    },
+    {
+      "name": "medal-layout",
+      "title": "Gift of Life Donor Medal \u2014 Backup Layout",
+      "postTypes": [
+        "page"
+      ]
+    },
+    {
+      "name": "registration-tissue-request",
+      "title": "Tissue Request Registration \u2014 Editable Page",
+      "postTypes": [
+        "page"
+      ]
+    },
+    {
+      "name": "registration-tissue-request-layout",
+      "title": "Tissue Request Registration \u2014 Backup Layout",
+      "postTypes": [
+        "page"
+      ]
+    },
+    {
+      "name": "member-profile",
+      "title": "Member Profile \u2014 Editable Page",
+      "postTypes": [
+        "page"
+      ]
+    },
+    {
+      "name": "member-profile-layout",
+      "title": "Member Profile \u2014 Backup Layout",
+      "postTypes": [
+        "page"
+      ]
+    },
+    {
+      "name": "enter-new-password",
+      "title": "Enter New Password \u2014 Editable Page",
+      "postTypes": [
+        "page"
+      ]
+    },
+    {
+      "name": "enter-new-password-layout",
+      "title": "Enter New Password \u2014 Backup Layout",
+      "postTypes": [
+        "page"
+      ]
+    },
+    {
+      "name": "user-downloads",
+      "title": "User Downloads \u2014 Editable Page",
+      "postTypes": [
+        "page"
+      ]
+    },
+    {
+      "name": "user-downloads-layout",
+      "title": "User Downloads \u2014 Backup Layout",
+      "postTypes": [
+        "page"
+      ]
+    },
+    {
+      "name": "transplant-surgery",
+      "title": "Transplant Surgery \u2014 Editable Page",
+      "postTypes": [
+        "page"
+      ]
+    },
+    {
+      "name": "transplant-surgery-layout",
+      "title": "Transplant Surgery \u2014 Backup Layout",
+      "postTypes": [
+        "page"
+      ]
+    },
+    {
+      "name": "thank-you-your-submission-has-been-sent",
+      "title": "Request Sent Confirmation \u2014 Editable Page",
+      "postTypes": [
+        "page"
+      ]
+    },
+    {
+      "name": "thank-you-your-submission-has-been-sent-layout",
+      "title": "Request Sent Confirmation \u2014 Backup Layout",
+      "postTypes": [
+        "page"
+      ]
+    },
+    {
+      "name": "other-give-now",
+      "title": "Other Ways to Give \u2014 Editable Page",
+      "postTypes": [
+        "page"
+      ]
+    },
+    {
+      "name": "other-give-now-layout",
+      "title": "Other Ways to Give \u2014 Backup Layout",
+      "postTypes": [
+        "page"
+      ]
+    },
+    {
+      "name": "forgot-password-boards",
+      "title": "Forgot Password Boards \u2014 Editable Page",
+      "postTypes": [
+        "page"
+      ]
+    },
+    {
+      "name": "landing-no-header-footer",
+      "title": "Landing Page No Header and Footer",
+      "postTypes": [
+        "page"
+      ]
     }
   ],
   "templateParts": [

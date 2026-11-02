@@ -1,0 +1,14 @@
+{
+  "desktop": {
+    "file": "worlds-first-eye-bank-desktop-v3.jpg",
+    "width": 1305,
+    "height": 532,
+    "sha256": "a3cc7af6a951e0b07b381f06a8baa7f5a49d1653fb18a17baae7af5d6fa1e410"
+  },
+  "mobile": {
+    "file": "worlds-first-eye-bank-mobile-v3.jpg",
+    "width": 533,
+    "height": 698,
+    "sha256": "0b3c38d8205bdfce7db60b2f53eb285b02aecf7f017f72c120585d3b1341f2dc"
+  }
+}

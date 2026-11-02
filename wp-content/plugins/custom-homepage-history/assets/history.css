@@ -1,0 +1,42 @@
+.home .ed-history.cws-history-v2>.ed-history-layout-v2{width:100%;max-width:none!important;padding:32px 4.3% 48px;margin:0!important;position:relative}
+.home .cws-history-v2 .ed-history-panel{width:100%;max-width:600px!important;margin:0 0 0 auto!important;padding:28px;background:rgba(255,255,255,.95)}
+.home .cws-history-v2 .ed-history-panel h2{font-size:var(--ed-font-heading);line-height:1.2;margin:0 0 20px}
+.home .cws-history-v2 .ed-history-panel p{font-size:var(--ed-font-body);line-height:1.4;margin:0}
+.home .cws-history-v2 .ed-history-about{display:flex;justify-content:flex-end;margin:24px 0 0!important;max-width:none!important}
+.home .cws-history-v2 .ed-history-about .wp-block-button__link{font-size:18px;font-weight:700;line-height:1.3;border-radius:22px;padding:14px 24px;background:#0345ab;color:#fff}
+.home .cws-history-v2 .ed-history-about .wp-block-button__link:hover,.home .cws-history-v2 .ed-history-about .wp-block-button__link:focus-visible{background:#043b90;color:#fff;transform:none}
+/* Let the desktop photo set its natural height so its edges and caption remain visible. */
+@media(min-width:901px){
+ .home .ed-history.cws-history-v2{min-height:0}
+ .home .ed-history.cws-history-v2>.ed-history-desktop,.home .ed-history.cws-history-v2>.ed-history-picture{position:relative;inset:auto;display:block;width:100%;margin:0!important}
+ .home .cws-history-v2 .ed-history-desktop img,.home .cws-history-v2 .ed-history-picture img{display:block;width:100%;height:auto;aspect-ratio:1305/532;object-fit:contain;object-position:center}
+}
+@media(min-width:901px){
+ .home .ed-history.cws-history-v2>.ed-history-layout-v2{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:flex-end;padding:24px 4.3% 44px}
+ .home .cws-history-v2 .ed-history-panel{flex-shrink:0}
+ .home .cws-history-v2 .ed-history-about{flex-shrink:0}
+}
+@media(max-width:900px){
+ .home .ed-history.cws-history-v2{min-height:0}
+ .home .ed-history.cws-history-v2>.cws-history-mobile-v3,.home .ed-history.cws-history-v2>.ed-history-picture{position:relative;inset:auto;display:block;width:100%;margin:0!important}
+ .home .cws-history-v2 .cws-history-mobile-v3 img,.home .cws-history-v2 .ed-history-picture img{display:block;width:100%;height:auto;aspect-ratio:533/698;object-fit:contain;object-position:center}
+ .home .ed-history.cws-history-v2>.ed-history-layout-v2{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:20px 5% 30px}
+ .home .cws-history-v2 .ed-history-panel,.home .cws-history-v2 .ed-history-about{flex-shrink:0}
+ .home .cws-history-v2 .ed-history-panel{width:100%;padding:20px}
+ .home .cws-history-v2 .ed-history-panel h2{font-size:var(--ed-font-heading);margin-bottom:18px}
+ .home .cws-history-v2 .ed-history-about{margin-top:20px!important}
+}
+
+/* Separate native image blocks keep the mobile switch independent of older theme code. */
+.home .ed-history.cws-history-v2>.cws-history-mobile-v3{display:none}
+@media(max-width:900px){
+ .home .ed-history.cws-history-v2>.ed-history-desktop{display:none!important}
+ .home .ed-history.cws-history-v2>.cws-history-mobile-v3{display:block}
+ .home .ed-section .wp-block-columns:has(.ed-resource-card){flex-direction:column;flex-wrap:nowrap!important}
+ .home .ed-section .wp-block-columns:has(.ed-resource-card)>.wp-block-column{flex-basis:auto!important;width:100%;min-width:0}
+ .home .ed-resource-card{height:420px!important;min-height:420px!important;aspect-ratio:auto!important}
+ .home .cws-resource-images-v2 .cws-resource-image{object-fit:cover!important;object-position:center top!important}
+}
+@media(max-width:600px){
+ .home .ed-resource-card{height:300px!important;min-height:300px!important}
+}

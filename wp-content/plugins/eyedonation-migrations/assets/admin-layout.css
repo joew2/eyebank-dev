@@ -1,0 +1,10 @@
+/* Only the Site Migrations screen; retain WordPress sidebar and responsive behavior. */
+.edm-admin-screen{min-width:0;max-width:100%;padding-bottom:24px}
+.edm-admin-screen .wrap{max-width:100%;min-width:0}
+.edm-admin-screen .widefat{width:100%;table-layout:fixed}
+.edm-admin-screen th,.edm-admin-screen td{overflow-wrap:anywhere;vertical-align:top}
+.edm-admin-screen pre{box-sizing:border-box;max-width:100%;max-height:400px;overflow:auto;white-space:pre-wrap;overflow-wrap:anywhere;background:#fff;padding:12px;border:1px solid #c3c4c7}
+.edm-admin-screen .button{max-width:100%;height:auto;white-space:normal;overflow-wrap:anywhere}
+.edm-admin-screen form{max-width:100%}
+.edm-admin-screen>.wrap+.wrap{border-top:1px solid #c3c4c7;padding-top:16px;margin-top:24px}
+@media(max-width:782px){.edm-admin-screen .widefat th,.edm-admin-screen .widefat td{padding:6px;font-size:12px}}

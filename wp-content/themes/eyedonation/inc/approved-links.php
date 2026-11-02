@@ -34,6 +34,10 @@ function ed_localize_leadership_links($html) {
     while ($tags->next_tag('A')) {
         $href = $tags->get_attribute('href');
         if (!is_string($href)) continue;
+        if (in_array($href, ['https://donatelife.ny.gov/register', 'https://donatelife.ny.gov/register/'], true)) {
+            $tags->set_attribute('href', 'https://donatelife.ny.gov/ref/EBSRlink/');
+            continue;
+        }
         $url = wp_parse_url($href);
         if (!in_array(strtolower($url['host'] ?? ''), ['eyedonation.org', 'www.eyedonation.org'], true)) continue;
         $relative = $url['path'] ?? '/';

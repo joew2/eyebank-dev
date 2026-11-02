@@ -1,0 +1,93 @@
+[
+  {
+    "file": "01-eyedonation-2026-10-30.zip",
+    "directory": "eyedonation",
+    "bytes": 12939477,
+    "files": 383,
+    "sha256": "5c30f7c9a1a6ea1fdc16b2a323a6f1e6f8222eba187fe4c5f9cebd89099da422"
+  },
+  {
+    "file": "03-custom-accessibility-translation-2026-10-30.zip",
+    "directory": "custom-accessibility-translation",
+    "bytes": 18689,
+    "files": 7,
+    "sha256": "af0d54b3545f05941ffccb5b9bbb232a270ab8d4d97f0335e0ec6c1aa534ed94"
+  },
+  {
+    "file": "04-custom-newsletters-2026-10-30.zip",
+    "directory": "custom-newsletters",
+    "bytes": 7510,
+    "files": 6,
+    "sha256": "cb70c5cd0ebbb3d03a23c056d15071040103928fc5f1b55b99a7cac03e3ae0ed"
+  },
+  {
+    "file": "05-custom-site-tracking-2026-10-30.zip",
+    "directory": "custom-site-tracking",
+    "bytes": 6520,
+    "files": 4,
+    "sha256": "e03ed8bf34ee02bab8c70377b1ccb13d50b813b09e501af0e38a4efce1a18e00"
+  },
+  {
+    "file": "06-eyedonation-migrations-2026-10-30.zip",
+    "directory": "eyedonation-migrations",
+    "bytes": 167804,
+    "files": 85,
+    "sha256": "4dcdb866a5d4a2f6b504010e80b1357d353c2cc78aef281cf91870190375f2cf"
+  },
+  {
+    "file": "07-custom-site-repairs-1.1.0.zip",
+    "directory": "custom-site-repairs",
+    "bytes": 15056,
+    "files": 9,
+    "sha256": "868130ee07bac1a8f6e9a5eaf04bca39396c42714be77277ab9de27d7d1bd37e"
+  },
+  {
+    "file": "08-custom-portal-navigation-fix-1.0.0.zip",
+    "directory": "custom-portal-navigation-fix",
+    "bytes": 12069,
+    "files": 9,
+    "sha256": "e4d3df22c9fc05f4f26888879150279cc49042fda2f8e55ffc476af6a6a1aa53"
+  },
+  {
+    "file": "09-custom-homepage-restore-1.0.0.zip",
+    "directory": "custom-homepage-restore",
+    "bytes": 13803,
+    "files": 10,
+    "sha256": "d9596f5451e6e0f6858aa09099877798ec2c6f41a4a484b8ccd7bd51907ec07a"
+  },
+  {
+    "file": "10-custom-toolset-mods-1.0.0.zip",
+    "directory": "custom-toolset-mods",
+    "bytes": 2121,
+    "files": 3,
+    "sha256": "cd0d01f6308140af4ac83998943070b4adf70a0e1f628f8889ac94dec872235f"
+  },
+  {
+    "file": "02-eyedonation-search-2026-10-30.zip",
+    "directory": "eyedonation-search",
+    "bytes": 17255,
+    "files": 8,
+    "sha256": "7d7204fc3961aba96e407f314794d1fc1217caaa879226cb64e8fe9b7c9ac5d7"
+  },
+  {
+    "file": "11-eyedonation-search-0.1.1.zip",
+    "directory": "eyedonation-search",
+    "bytes": 17255,
+    "files": 8,
+    "sha256": "7d7204fc3961aba96e407f314794d1fc1217caaa879226cb64e8fe9b7c9ac5d7"
+  },
+  {
+    "file": "12-custom-forgot-password-boards-1.0.0.zip",
+    "directory": "custom-forgot-password-boards",
+    "bytes": 12690,
+    "files": 11,
+    "sha256": "fb91581841d532bf6f267ee224d98f05d43f02ec57737e189a16f35f3c06a84a"
+  },
+  {
+    "file": "13-custom-mobile-donor-panel-1.0.0.zip",
+    "directory": "custom-mobile-donor-panel",
+    "bytes": 8639,
+    "files": 8,
+    "sha256": "cc642c3b0f796c7cab385f68952a5075bf7eaea67e2d27e0ef98f5279e56fd1a"
+  }
+]

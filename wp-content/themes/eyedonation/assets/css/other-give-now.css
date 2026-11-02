@@ -1,0 +1,34 @@
+/* Other Ways to Give: native blocks, shared typography and FAQ accordion behavior. */
+.ed-give-hero{gap:0;align-items:stretch;margin:0 0 40px;background:#e9eef8}
+.ed-give-hero>.wp-block-column{min-width:0;display:flex;flex-direction:column}
+.ed-give-hero-copy{padding:36px;text-align:center;display:flex;flex-direction:column;justify-content:center;flex:1;min-height:360px}
+.ed-give-hero-copy .wp-block-buttons{justify-content:center;margin:0 0 24px}.ed-give-hero-copy p:last-child{margin-bottom:0}
+.ed-give-hero .ed-give-hero-photo{margin:0;height:100%;flex:1}.ed-give-hero-photo img{width:100%;height:100%;min-height:360px;object-fit:cover;object-position:50% 100%}
+.ed-give-page .ed-give-banner{max-width:750px;margin:0 auto 28px}.ed-give-banner img{width:100%}
+.ed-give-page.ed-section>h2{font-size:var(--ed-font-heading,40px);text-align:center;margin:0 0 20px}
+.ed-give-page.ed-section>h2+p{text-align:center}
+.ed-give-options{border:1px solid #d8e1ef;border-radius:16px;overflow:hidden;margin:32px 0}
+.ed-give-options>.ed-faq-item:first-child{border-top:0}.ed-give-options>.ed-faq-item:last-child{border-bottom:0}
+.ed-give-options .ed-faq-answer{display:flow-root}.ed-give-options .ed-faq-answer h2{font-size:24px;margin:20px 0 16px}
+.ed-give-options .ed-faq-answer .wp-block-buttons{justify-content:center;margin:24px 0 0}
+.ed-give-event-photos{gap:12px;margin:20px 0 24px;align-items:stretch}.ed-give-event-photos>.wp-block-column{min-width:0}.ed-give-event-photos figure{margin:0}
+.ed-give-side-photo{float:right;max-width:280px;width:36%;margin:20px 0 24px 28px!important}
+.ed-give-social-photo{margin-top:20px!important}.ed-give-social-photo img{width:100%}
+.ed-give-socials{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:20px;margin:28px 0 0}
+.ed-give-socials figure{margin:0;max-width:160px}.ed-give-socials img{width:auto;height:32px;max-width:100%;object-fit:contain}
+.ed-give-report{margin:36px 0 0;padding:32px;background:#e9eef8}.ed-give-report>.wp-block-buttons{justify-content:center;margin-bottom:20px}.ed-give-report>.wp-block-buttons+p{text-align:center}.ed-give-report ul:last-child{margin-bottom:0}
+@media(max-width:781px){
+ .ed-give-hero{flex-direction:column}.ed-give-hero>.wp-block-column{flex-basis:auto!important;width:100%}.ed-give-hero-copy{padding:28px 24px;min-height:0}
+ .ed-give-hero-photo img{min-height:0;max-height:300px;height:auto;object-fit:contain}
+ .ed-give-event-photos{flex-direction:column;gap:16px}.ed-give-event-photos>.wp-block-column{flex-basis:auto!important;width:100%}
+ .ed-give-side-photo{float:none;max-width:320px;width:100%;margin:20px auto 24px!important}
+ .ed-give-report{padding:24px 20px}.ed-give-options .ed-faq-answer h2{font-size:22px}
+}
+.ed-give-page .ed-give-hero .wp-block-button__link{background:#0345ab}
+.ed-give-page .ed-give-hero .wp-block-button__link:hover{background:#013688}
+/* Full-width hero and reports band; keep the article and report copy aligned to the site grid. */
+.ed-give-page.ed-section{max-width:none!important;padding-inline:0}
+.ed-give-page.ed-section>:where(:not(.ed-give-hero):not(.ed-give-report)){width:90%;max-width:var(--ed-content-width,1050px);margin-inline:auto}
+.ed-give-page.ed-section>.ed-give-banner{max-width:750px}
+.ed-give-page>.ed-give-report{width:100%;max-width:none;margin-inline:0;padding-inline:max(5%,calc((100% - var(--ed-content-width,1050px))/2))}
+@media(max-width:781px){.ed-give-page>.ed-give-report{padding-inline:max(5%,20px)}}

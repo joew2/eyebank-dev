@@ -1,0 +1,8 @@
+/* Match the existing stacked Resources cards; align the mobile photo to the top and crop excess from the bottom. */
+@media(max-width:781px){
+ .home .ed-resource-card.cws-resource-images-v2{aspect-ratio:auto!important;height:420px!important;min-height:420px!important}
+ .home .cws-resource-images-v2 .cws-resource-image{object-fit:cover!important;object-position:center top!important}
+}
+@media(max-width:600px){
+ .home .ed-resource-card.cws-resource-images-v2{height:300px!important;min-height:300px!important}
+}

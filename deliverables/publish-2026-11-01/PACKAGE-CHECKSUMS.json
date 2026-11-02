@@ -1,0 +1,44 @@
+[
+  {
+    "file": "14-custom-resource-photo-framing-1.0.0.zip",
+    "directory": "custom-resource-photo-framing",
+    "bytes": 9433,
+    "files": 8,
+    "sha256": "026afcb84be5f2df07409bd5f23c4f61daf6441d8c25c6e421694d2e3e7c62ea"
+  },
+  {
+    "file": "15-custom-resource-card-images-1.0.0.zip",
+    "directory": "custom-resource-card-images",
+    "bytes": 533158,
+    "files": 13,
+    "sha256": "aed409952e1bf3020ab47ff96650bf912a1df20c462129a2ad80e565e9fe629c"
+  },
+  {
+    "file": "16-custom-mobile-resource-card-height-1.1.0.zip",
+    "directory": "custom-mobile-resource-card-height",
+    "bytes": 8906,
+    "files": 8,
+    "sha256": "10d5401ae80e8d1ce49c6c5e61309cad1520dac219f3c6e80da7e4b22d7ba52f"
+  },
+  {
+    "file": "17-custom-mobile-resource-image-1.2.0.zip",
+    "directory": "custom-mobile-resource-image",
+    "bytes": 491187,
+    "files": 14,
+    "sha256": "20519621163126437240191b72b937bbfeaf1efabc3dada11214c8b77f10227d"
+  },
+  {
+    "file": "18-custom-landing-no-header-footer-1.0.0.zip",
+    "directory": "custom-landing-no-header-footer",
+    "bytes": 9215,
+    "files": 9,
+    "sha256": "e378f9aff001ec2e28f2b79d1eeda5b612e0f9fd48d7743d0b0f22d1b5b1682b"
+  },
+  {
+    "file": "19-custom-homepage-history-1.4.0.zip",
+    "directory": "custom-homepage-history",
+    "bytes": 361829,
+    "files": 13,
+    "sha256": "6dd3e31cdfe44f57a26e8f183311272b0f01912570a21a24e5a3fcb1b3dd018f"
+  }
+]

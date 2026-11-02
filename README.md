@@ -47,6 +47,16 @@ The following local plugins are backed up as source, with their existing names a
 - `custom-es-donor-family-survey`
 - `custom-family-survey-colums`
 - `custom-social-icons.php`
+- `custom-site-tracking` — theme-independent GTM, PostHog and Facebook domain verification; see its README for setup.
+- `custom-site-repairs` — separate one-button repair of header portals and Downloads/tissue-request pages.
+- `custom-portal-navigation-fix` — targeted correction placing the portal links between Give Now and More in the active blue-bar menu.
+- `custom-homepage-restore` — independent one-button restore of the current editable homepage and its display templates.
+- `custom-toolset-mods` — general Toolset utility plugin; currently sorts the three selected user Views by last name.
+- `custom-forgot-password-boards` — one-button migration of the legacy boards password page and editable template.
+- `custom-mobile-donor-panel` — CSS-only mobile donor-card scale and hero-bottom placement adjustment.
+- `custom-resource-photo-framing` — responsive framing of the homepage recipients/families Resources photograph.
+- `custom-resource-card-images` — import supplied desktop/mobile photos and replace the prior framing adjustment.
+- `custom-mobile-resource-card-height` — match the mobile recipients/families card to the neighboring Resources cards.
 - `custom-top-links-english-site`
 - `custom-translation-navigation-links`
 
@@ -55,3 +65,9 @@ The following local plugins are backed up as source, with their existing names a
 ## Combined accessibility and translation widget
 
 `wp-content/plugins/custom-accessibility-translation/` contains **Custom Accessibility Translation CWS (ATP)**. It replaces the two separate visitor widgets, copies legacy translation mappings on activation, and provides an independent settings/mapping screen. See its README for deployment and verification. Old plugin sources and records are preserved.
+
+- `custom-mobile-resource-image` — replace the mobile Resources photo with v3, matching card heights and cropping only from the bottom.
+
+- `custom-landing-no-header-footer` — install the content-only landing page template and assign Fall Benefit while preserving Thrive content.
+
+- `custom-homepage-history` — replace the history desktop photo, narrow its panel and move About Us below.

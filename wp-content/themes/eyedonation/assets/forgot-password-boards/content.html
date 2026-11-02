@@ -1,0 +1,9 @@
+<!-- wp:group {"className":"ed-section ed-forgot-password-boards","layout":{"type":"default"}} -->
+<div class="wp-block-group ed-section ed-forgot-password-boards"><!-- wp:heading {"level":1} --><h1 class="wp-block-heading">Forgot Password — Boards</h1><!-- /wp:heading -->
+<!-- wp:shortcode -->
+[wpv-conditional if="( '[wpv-current-user info="logged_in"]' eq 'true' )"]<p>You are currently logged in.</p>[/wpv-conditional]
+<!-- /wp:shortcode -->
+<!-- wp:shortcode -->
+[wpv-forgot-password-form redirect_url="{{member_url}}" redirect_url_fail="{{member_url}}" reset_password_url="{{reset_url}}"]
+<!-- /wp:shortcode -->
+</div><!-- /wp:group -->

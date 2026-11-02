@@ -64,3 +64,42 @@ wp-config*.php
 
 # Locally authored newsletter archive and administration.
 !/wp-content/plugins/custom-newsletters/
+
+# Theme-independent tracking integrations.
+!/wp-content/plugins/custom-site-tracking/
+
+# Separate one-button portal and member-page repairs.
+!/wp-content/plugins/custom-site-repairs/
+
+# Targeted portal placement correction.
+!/wp-content/plugins/custom-portal-navigation-fix/
+
+# Independent, repeatable homepage-only restore.
+!/wp-content/plugins/custom-homepage-restore/
+
+# General site-specific Toolset customizations.
+!/wp-content/plugins/custom-toolset-mods/
+
+# Standalone legacy boards password-recovery migration.
+!/wp-content/plugins/custom-forgot-password-boards/
+
+# Mobile-only donor-card sizing and hero placement migration.
+!/wp-content/plugins/custom-mobile-donor-panel/
+
+# Responsive homepage recipients/families photo framing migration.
+!/wp-content/plugins/custom-resource-photo-framing/
+
+# Bundled desktop/mobile replacement photos for the Resources card.
+!/wp-content/plugins/custom-resource-card-images/
+
+# Mobile-only Resources card height follow-up.
+!/wp-content/plugins/custom-mobile-resource-card-height/
+
+# Bundled mobile-v3 Resources photo follow-up.
+!/wp-content/plugins/custom-mobile-resource-image/
+
+# Content-only landing page template migration.
+!/wp-content/plugins/custom-landing-no-header-footer/
+
+# Homepage history background and layout migration.
+!/wp-content/plugins/custom-homepage-history/

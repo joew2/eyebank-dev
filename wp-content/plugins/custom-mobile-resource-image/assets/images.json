@@ -1,0 +1,14 @@
+{
+  "mobile": {
+    "file": "recipients-families-mobile-v3.jpg",
+    "sha256": "f6ad7df2a7c73bd31c51966c18a1c90c75203096feecdba82c5720abc7ff0a41",
+    "width": 668,
+    "height": 752
+  },
+  "desktop": {
+    "file": "recipients-families-desktop-v2.jpg",
+    "sha256": "5ac9b1c06ca152e172c472be4f97901f72f54ac25e6b21e2328675b49d8d02dd",
+    "width": 670,
+    "height": 840
+  }
+}

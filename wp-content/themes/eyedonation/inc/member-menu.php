@@ -4,7 +4,7 @@ defined('ABSPATH') || exit;
 // Resolve original file-based placeholders without changing the frozen installation payload.
 add_filter('render_block_data',function($block){
  if(($block['blockName']??'')!=='core/navigation-link')return $block;
- $links=['/?eyedonation-placeholder=member-profile'=>'/member-profile/','/?eyedonation-placeholder=member-transplant-tissue'=>'/request-transplant-tissue/','/?eyedonation-placeholder=member-research-tissue'=>'/request-research-tissue/'];
+ $links=['/?eyedonation-placeholder=member-downloads'=>'/user-downloads/','/?eyedonation-placeholder=member-profile'=>'/member-profile/','/?eyedonation-placeholder=member-transplant-tissue'=>'/request-transplant-tissue/','/?eyedonation-placeholder=member-research-tissue'=>'/request-research-tissue/'];
  $url=$block['attrs']['url']??'';
  if(isset($links[$url]))$block['attrs']['url']=$links[$url];
  return $block;
@@ -42,8 +42,13 @@ add_filter('render_block_core/template-part',function($html,$block){
  return $html.render_block(['blockName'=>'core/template-part','attrs'=>['slug'=>'member-menu','theme'=>get_stylesheet(),'tagName'=>'section','className'=>'ed-member-region'],'innerBlocks'=>[],'innerHTML'=>'','innerContent'=>[]]);
 },30,2);
 add_filter('render_block_core/navigation-link',function($html,$block){
- if(!is_user_logged_in())return $html;
  $classes=explode(' ',$block['attrs']['className']??'');
+ // Match the legacy menu's checked roles; remove the entire item, including its divider.
+ if(in_array('ed-member-downloads',$classes,true)){
+  $allowed_roles=['administrator','board_of_director','medical_advisory_board','eb_staff','eb_staff_bod_only'];
+  if(!is_user_logged_in()||!array_intersect($allowed_roles,(array)wp_get_current_user()->roles))return '';
+ }
+ if(!is_user_logged_in())return $html;
  foreach(['profile','downloads','transplant','research'] as $name){
   if(!in_array('ed-member-'.$name,$classes,true))continue;
   return preg_replace_callback('~(<a\b[^>]*>)~',static function($m)use($name){return $m[1].ed_member_icon($name);},$html,1);

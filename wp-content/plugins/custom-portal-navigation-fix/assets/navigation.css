@@ -1,0 +1,2 @@
+/* Make room for seven main links without changing their existing font size. */
+@media(min-width:1025px){.ed-nav{gap:20px;padding-inline:4%}.ed-nav .ed-primary-navigation{min-width:0}.ed-nav .ed-primary-navigation .wp-block-navigation__container{gap:clamp(12px,1.8vw,28px);flex-wrap:wrap;justify-content:center}.ed-nav .ed-primary-navigation>.wp-block-navigation__responsive-container{min-width:0}}

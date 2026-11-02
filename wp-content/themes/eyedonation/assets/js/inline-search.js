@@ -1,7 +1,8 @@
-/* A hanging search panel overlays the page without changing menu layout. */
+/* Desktop uses a hanging panel; mobile expands an inline search to the right. */
 (()=>{
  const form=document.querySelector('.ed-header-search');if(!form)return;
  const field=form.querySelector('input[type=search]');if(!field)return;
+ const mobile=matchMedia('(max-width:1024px)');
  const icon='<svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M15 15L21 21M10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10C17 13.866 13.866 17 10 17Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
  const control=document.createElement('div');control.className='ed-header-search-control';
  const toggle=document.createElement('button');toggle.type='button';toggle.className='ed-search-open';
@@ -13,8 +14,9 @@
  if(submit){submit.setAttribute('aria-label',labels.open||'Search');submit.innerHTML=icon;}
  form.before(control);control.append(toggle,form);form.inert=true;form.setAttribute('aria-hidden','true');
  const position=()=>{
+  if(mobile.matches){control.style.removeProperty('--ed-search-panel-left');control.classList.remove('opens-up');return;}
   const rect=control.getBoundingClientRect(),width=form.offsetWidth;
-  const preferred=matchMedia('(max-width:1024px)').matches?(rect.width-width)/2:rect.width-width;
+  const preferred=rect.width-width;
   const left=Math.max(12-rect.left,Math.min(preferred,innerWidth-width-12-rect.left));
   control.style.setProperty('--ed-search-panel-left',left+'px');
   control.classList.toggle('opens-up',innerHeight-rect.bottom<form.offsetHeight+12&&rect.top>form.offsetHeight+12);
@@ -34,8 +36,8 @@
   if(control.classList.contains('is-open')&&pinned){close(true);return;}
   pinned=true;open(true);
  });
- // Hover reveals the panel without stealing keyboard focus. Touch remains click-driven.
- const canHover=event=>event.pointerType==='mouse'&&matchMedia('(any-hover:hover)').matches;
+ // Desktop hover reveals the panel without moving focus. Mobile remains click-driven.
+ const canHover=event=>!mobile.matches&&event.pointerType==='mouse'&&matchMedia('(any-hover:hover)').matches;
  control.addEventListener('pointerenter',event=>{if(canHover(event))open(false);});
  control.addEventListener('pointerleave',event=>{
   if(!canHover(event))return;
@@ -49,6 +51,7 @@
  document.addEventListener('pointerup',()=>{setTimeout(()=>{pointerInteracting=false;},0);});
  document.addEventListener('pointercancel',()=>{pointerInteracting=false;});
  control.addEventListener('focusout',()=>{queueMicrotask(()=>{if(!control.contains(document.activeElement)&&!pointerInteracting){pinned=false;if(!control.matches(':hover'))close(false);}});});
+ mobile.addEventListener('change',()=>close(false));
  window.addEventListener('resize',()=>{if(control.classList.contains('is-open'))position();});
  const menu=document.querySelector('.ed-primary-navigation .wp-block-navigation__responsive-container');
  if(menu)new MutationObserver(()=>{if(!menu.classList.contains('is-menu-open')&&matchMedia('(max-width:1024px)').matches)close(false);}).observe(menu,{attributes:true,attributeFilter:['class']});
