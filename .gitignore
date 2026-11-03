@@ -103,3 +103,6 @@ wp-config*.php
 
 # Homepage history background and layout migration.
 !/wp-content/plugins/custom-homepage-history/
+
+# Required temporary compatibility layer while Thrive landing pages remain.
+!/wp-content/plugins/custom-thrive-compatibility-fix/

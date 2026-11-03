@@ -71,3 +71,5 @@ The following local plugins are backed up as source, with their existing names a
 - `custom-landing-no-header-footer` — install the content-only landing page template and assign Fall Benefit while preserving Thrive content.
 
 - `custom-homepage-history` — replace the history desktop photo, narrow its panel and move About Us below.
+
+- `custom-thrive-compatibility-fix` — REQUIRED while Thrive landing pages remain; corrects theme/domain stylesheet misclassification without editing Thrive.
