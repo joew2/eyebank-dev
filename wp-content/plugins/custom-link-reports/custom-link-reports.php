@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Custom Link Reports CWS
  * Description: Admin-only Short.io analytics reports with previews, email delivery, and weekly scheduling.
- * Version: 1.2.0
+ * Version: 1.3.0
  * Author: Creative Way Solutions
  * License: GPL-3.0-or-later
  * Requires at least: 6.2
@@ -13,7 +13,7 @@ namespace CWS\CustomLinkReports;
 
 defined('ABSPATH') || exit;
 
-const VERSION = '1.2.0';
+const VERSION = '1.3.0';
 const FILE = __FILE__;
 const DIR = __DIR__;
 const SETTINGS_OPTION = 'cws_clr_settings';

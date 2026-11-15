@@ -34,14 +34,17 @@ final class Runner {
 
     public static function manual(int $report_id, array $period, ?string $test_recipient = null, bool $refresh = false) {
         $config = Reports::get($report_id);
-        if ($test_recipient !== null) $config['recipients'] = Reports::emails(array($test_recipient));
+        if ($test_recipient !== null) {
+            $config['recipients'] = Reports::emails(array($test_recipient));
+            $config['bcc_recipients'] = array();
+        }
         return self::execute($report_id, $config, $period, time(), $test_recipient !== null, array(), 1, 0, $refresh);
     }
 
     private static function execute(int $report_id, array $config, array $period, int $occurrence, bool $test, array $states, int $attempt, int $existing_run = 0, bool $refresh = false) {
         if (!Settings::has_key()) return new \WP_Error('cws_clr_no_key', __('The Short.io key is missing.', 'custom-link-reports'));
         if (!$config['links']) return new \WP_Error('cws_clr_no_links', __('The report has no selected links.', 'custom-link-reports'));
-        if (!$config['recipients']) return new \WP_Error('cws_clr_no_recipients', __('The report has no valid recipients.', 'custom-link-reports'));
+        if (!$config['recipients'] && empty($config['bcc_recipients'])) return new \WP_Error('cws_clr_no_recipients', __('The report has no valid recipients.', 'custom-link-reports'));
         $lock = 'cws_clr_lock_' . $report_id;
         if (get_transient($lock)) return new \WP_Error('cws_clr_busy', __('This report is already running.', 'custom-link-reports'));
         set_transient($lock, 1, 20 * MINUTE_IN_SECONDS);
@@ -54,17 +57,30 @@ final class Runner {
             self::maybe_retry($run_id, $report_id, $attempt, $data);
             delete_transient($lock); return $data;
         }
-        $name = get_the_title($report_id);
+        $name = Reports::title($report_id);
         $html = Renderer::html($name, $config, $data);
         $subject = Renderer::subject($config['subject'], $name, $period[0], $period[1]);
         if ($test) $subject = '[TEST] ' . $subject;
         foreach ($config['recipients'] as $recipient) {
-            if (($states[$recipient]['status'] ?? '') === 'accepted') continue;
-            if (($states[$recipient]['status'] ?? '') === 'handing_off') { $states[$recipient] = array('status' => 'unknown', 'at' => time()); continue; }
-            $states[$recipient] = array('status' => 'handing_off', 'at' => time());
+            $state_key = 'to:' . strtolower($recipient);
+            // Recognize recipient states written by versions before typed delivery keys.
+            if (!isset($states[$state_key]) && isset($states[$recipient])) $states[$state_key] = $states[$recipient];
+            if (($states[$state_key]['status'] ?? '') === 'accepted') continue;
+            if (($states[$state_key]['status'] ?? '') === 'handing_off') { $states[$state_key] = array('status' => 'unknown', 'at' => time(), 'type' => 'to', 'recipient' => $recipient); continue; }
+            $states[$state_key] = array('status' => 'handing_off', 'at' => time(), 'type' => 'to', 'recipient' => $recipient);
             Runs::update($run_id, array('recipient_state' => wp_json_encode($states), 'status' => 'sending', 'aggregate_snapshot' => wp_json_encode($data)));
             $accepted = Mailer::send($recipient, $subject, $html);
-            $states[$recipient] = array('status' => $accepted ? 'accepted' : 'failed', 'at' => time());
+            $states[$state_key] = array('status' => $accepted ? 'accepted' : 'failed', 'at' => time(), 'type' => 'to', 'recipient' => $recipient);
+        }
+        // Private copies are sent separately so their addresses never enter a regular recipient's headers.
+        foreach (Reports::emails($config['bcc_recipients'] ?? array()) as $recipient) {
+            $state_key = 'bcc:' . strtolower($recipient);
+            if (($states[$state_key]['status'] ?? '') === 'accepted') continue;
+            if (($states[$state_key]['status'] ?? '') === 'handing_off') { $states[$state_key] = array('status' => 'unknown', 'at' => time(), 'type' => 'bcc', 'recipient' => $recipient); continue; }
+            $states[$state_key] = array('status' => 'handing_off', 'at' => time(), 'type' => 'bcc', 'recipient' => $recipient);
+            Runs::update($run_id, array('recipient_state' => wp_json_encode($states), 'status' => 'sending', 'aggregate_snapshot' => wp_json_encode($data)));
+            $accepted = Mailer::send($recipient, $subject, $html);
+            $states[$state_key] = array('status' => $accepted ? 'accepted' : 'failed', 'at' => time(), 'type' => 'bcc', 'recipient' => $recipient);
         }
         $failed = array_filter($states, static fn($s) => ($s['status'] ?? '') === 'failed');
         $unknown = array_filter($states, static fn($s) => ($s['status'] ?? '') === 'unknown');

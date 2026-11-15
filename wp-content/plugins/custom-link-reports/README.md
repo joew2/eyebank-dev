@@ -11,7 +11,7 @@ Version 1.0.0. Requires WordPress 6.2+ and PHP 8.1+ with Sodium. Single-site or 
 5. Save, create a live preview, and send an explicit test. Tests go only to the entered address and carry a `[TEST]` prefix.
 6. Enable and unpause the weekly schedule only after verification.
 
-Scheduled events use one-off WP-Cron jobs calculated in the report timezone. WordPress runs them after the selected time when traffic reaches the site. The intended date window is frozen from the scheduled occurrence. A successful `wp_mail()` result means accepted for processing, not confirmed inbox delivery.
+Scheduled events use one-off WP-Cron jobs calculated in the report timezone. WordPress runs them after the selected time when traffic reaches the site. The intended date window is frozen from the scheduled occurrence. A successful `wp_mail()` result means accepted for processing, not confirmed inbox delivery. Optional BCC recipients receive separately addressed private copies so their addresses never appear to regular recipients or to one another.
 
 The plugin only reads Short.io domains, links, and aggregate analytics. It does not create, edit, or delete links and stores no click-level IP or visitor data.
 

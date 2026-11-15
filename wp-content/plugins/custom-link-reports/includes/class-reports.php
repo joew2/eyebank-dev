@@ -18,7 +18,7 @@ final class Reports {
         $settings = Settings::get();
         return array(
             'domain_id' => (string) $settings['default_domain'], 'links' => array(),
-            'recipients' => self::emails((string) $settings['recipients']),
+            'recipients' => self::emails((string) $settings['recipients']), 'bcc_recipients' => array(),
             'subject' => '{report_name}: {date_start} – {date_end}',
             'introduction' => '', 'footer' => '', 'heading' => '', 'accent' => '', 'logo_id' => 0,
             'sections' => array('summary', 'daily', 'referrers', 'countries', 'browsers', 'os'),
@@ -60,6 +60,9 @@ final class Reports {
         }
         usort($out['links'], static fn($a, $b) => $a['order'] <=> $b['order']);
         $out['recipients'] = self::emails($in['recipients'] ?? array());
+        $out['bcc_recipients'] = self::emails($in['bcc_recipients'] ?? array());
+        $to_lookup = array_flip(array_map('strtolower', $out['recipients']));
+        $out['bcc_recipients'] = array_values(array_filter($out['bcc_recipients'], static fn($email) => !isset($to_lookup[strtolower($email)])));
         $out['subject'] = sanitize_text_field((string) ($in['subject'] ?? $out['subject']));
         $out['introduction'] = wp_kses((string) ($in['introduction'] ?? ''), self::allowed_html());
         $out['footer'] = wp_kses((string) ($in['footer'] ?? ''), self::allowed_html());
@@ -84,6 +87,12 @@ final class Reports {
 
     public static function all(): array {
         return get_posts(array('post_type' => REPORT_TYPE, 'post_status' => 'private', 'numberposts' => -1, 'orderby' => 'title', 'order' => 'ASC'));
+    }
+
+    /** Return the stored title without WordPress's automatic "Private:" prefix. */
+    public static function title(int $id): string {
+        $title = get_post_field('post_title', $id, 'raw');
+        return is_string($title) ? $title : '';
     }
 
     public static function emails($value): array {
