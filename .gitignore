@@ -52,6 +52,7 @@ wp-config*.php
 !/wp-content/plugins/custom-downloads-portal/
 !/wp-content/plugins/custom-link-reports/
 !/wp-content/plugins/custom-popup-app-cw/
+!/wp-content/plugins/custom-thrive-page-titles/
 !/wp-content/plugins/custom-user-info-url.php
 !/wp-content/plugins/custom-disable-layout-metaboxes/
 !/wp-content/plugins/custom-disable-menu-links-for-creators/
