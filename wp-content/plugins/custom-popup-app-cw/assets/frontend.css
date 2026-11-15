@@ -1,0 +1,25 @@
+/* All component rules are isolated from the active theme. */
+dialog.cw_popup_root { --cw-popup-gutter:24px; --cw-popup-safe-top:env(safe-area-inset-top,0px); --cw-popup-safe-right:env(safe-area-inset-right,0px); --cw-popup-safe-bottom:env(safe-area-inset-bottom,0px); --cw-popup-safe-left:env(safe-area-inset-left,0px); position:fixed!important; inset:0!important; margin:0!important; padding:0!important; border:0!important; border-radius:0!important; background:transparent!important; color:#fff!important; max-width:none!important; max-height:none!important; overflow-x:hidden!important; overflow-y:auto!important; width:100%!important; height:100vh!important; height:100dvh!important; overscroll-behavior:contain; z-index:2147483647; box-shadow:none!important; opacity:1; }
+dialog.cw_popup_root:not([open]) { display:none!important; }
+dialog.cw_popup_root::backdrop { background:rgba(0,0,0,.78); }
+.cw_popup_root * { box-sizing:border-box; }
+.cw_popup_root .cw_popup_close_row { position:absolute; top:-22px; right:-22px; z-index:2; }
+.cw_popup_root .cw_popup_close { appearance:none; display:grid; place-items:center; width:44px!important; height:44px!important; min-width:44px!important; min-height:44px!important; margin:0!important; padding:0!important; border:0!important; border-radius:50%!important; background:transparent!important; color:#fff!important; cursor:pointer; box-shadow:none!important; transform:scale(1)!important; transition:transform .16s ease,background-color .16s ease; line-height:1!important; }
+.cw_popup_root .cw_popup_close:hover { background:transparent!important; transform:scale(1.12)!important; }
+.cw_popup_root .cw_popup_close svg { display:block; position:relative; z-index:1; width:9px; height:9px; fill:none; stroke:currentColor; stroke-width:2; }
+.cw_popup_root .cw_popup_graphic { display:block; margin:0!important; padding:0!important; border:0!important; border-radius:0!important; line-height:0!important; text-decoration:none!important; background:transparent!important; box-shadow:0 14px 60px #0008; }
+.cw_popup_root .cw_popup_image { display:block!important; max-width:none!important; max-height:none!important; margin:0!important; padding:0!important; border:0!important; border-radius:0!important; object-fit:contain!important; }
+.cw_popup_root .cw_popup_graphic:focus-visible { outline:3px solid #fff!important; outline-offset:3px; }
+.cw_popup_root .cw_popup_sr { position:absolute; width:1px; height:1px; margin:-1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
+@media(max-width:600px) { dialog.cw_popup_root { --cw-popup-gutter:16px; } }
+@media(prefers-reduced-motion:no-preference) { dialog.cw_popup_root[open] { animation:cw_popup_fade .15s ease-out; } @keyframes cw_popup_fade { from {opacity:0} to {opacity:1} } }
+
+.cw_popup_root .cw_popup_viewport { position:fixed; top:0; left:0; width:0; height:100vh; height:100dvh; visibility:hidden; pointer-events:none; }
+
+.cw_popup_root .cw_popup_panel { position:relative; }
+.cw_popup_root .cw_popup_frame { overflow:visible; }
+.cw_popup_root .cw_popup_close::before { content:""; position:absolute; width:22px; height:22px; box-sizing:border-box; border:1px solid #fff; border-radius:50%; background:#111; }
+.cw_popup_root .cw_popup_close:focus-visible { outline:none!important; }
+.cw_popup_root .cw_popup_close:focus-visible::before { outline:none; border-width:2px; background:#333; }
+.cw_popup_root .cw_popup_close:hover::before { background:#333; }
+@media(prefers-reduced-motion:reduce) { .cw_popup_root .cw_popup_close { transition:none; } }

@@ -12,6 +12,9 @@
 !/wp-content/themes/eyedonation/
 !/wp-content/plugins/
 /wp-content/plugins/*
+
+# Track reviewed, locally authored plugins while continuing to ignore
+# installed third-party plugins. Generated installation ZIPs remain ignored.
 !/wp-content/plugins/eyedonation-search/
 !/wp-content/plugins/eyedonation-migrations/
 
@@ -46,6 +49,9 @@ wp-config*.php
 *.tgz
 
 # Locally authored site plugins (explicitly reviewed).
+!/wp-content/plugins/custom-downloads-portal/
+!/wp-content/plugins/custom-link-reports/
+!/wp-content/plugins/custom-popup-app-cw/
 !/wp-content/plugins/custom-user-info-url.php
 !/wp-content/plugins/custom-disable-layout-metaboxes/
 !/wp-content/plugins/custom-disable-menu-links-for-creators/
